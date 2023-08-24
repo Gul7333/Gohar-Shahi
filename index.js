@@ -94,6 +94,14 @@ fetch("Profile-photo.json")
     setInterval(nextProfilePhoto, 5000);
     // fetch request end
   });
+
+// function for zikre Qalb
+const zikrQalb = document.getElementById("zikrqalb");
+function zikrqalb() {
+  console.log("Click");
+  zikrQalb.classList.toggle("active");
+}
+
 // _________________scrolltotop______
 
 // "scroll to top" which appear after scrollY higher then 800
@@ -102,7 +110,6 @@ const scrollTotop = document.querySelector(".scrolltotop");
 window.addEventListener("scroll", () => {
   if (scrollY > 800) {
     scrollTotop.style.display = "block";
-    console.log(scrollY);
   } else {
     scrollTotop.style.display = "none";
   }

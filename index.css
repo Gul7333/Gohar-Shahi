@@ -23,43 +23,46 @@ h5 {
 }
 
 nav {
-  height: 50px;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 16;
+  background: #448aff;
   width: 100%;
   align-items: center;
 }
 
 nav .web-title {
-  margin-left: 12px;
-  color: #000;
+  margin-left: 1rem;
+  color: #fff;
   font-size: 1.5rem;
   font-family: kalam;
+  font-weight: bold;
 }
 .Logo {
   margin-right: 1rem;
+  width: 1.4rem;
   z-index: 22;
 }
 .Logo div {
-  width: 1.4rem;
+  width: 100%;
   height: 3px;
-  background: #000;
+  background: #fff;
   border-radius: 5px;
-  margin-top: 4px;
+  margin-bottom: 4px;
   transition: all 0.3s;
 }
 .Logo-cross div:nth-child(1) {
-  transform: rotateZ(55deg) translateY(6px);
+  transform: rotateZ(40deg);
 
-  transform-origin: center;
-}
-.Logo-cross div:nth-child(2) {
-  transform: rotateZ(-55deg) translateY(-6px);
-  transform-origin: center;
+  transform-origin: 0;
 }
 .Logo-cross div:nth-child(3) {
+  transform: rotateZ(-40deg);
+  transform-origin: 0;
+}
+.Logo-cross div:nth-child(2) {
   width: 0;
 }
 /* _________________________________ */
@@ -72,12 +75,13 @@ nav .web-title {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   width: 0;
+  color: #fff;
   box-sizing: border-box;
   overflow: scroll;
-  background: #919be2;
-  z-index: 9;
+  background: #448aff;
+  z-index: 13;
   transition: all 0.3s;
 }
 .activenav {
@@ -261,6 +265,30 @@ div.button a:hover {
   }
 }
 /* ________________________________ */
+/* css for zikre e qlab popup */
+#zikrqalb {
+  display: none;
+  position: fixed;
+  width: 80%;
+  height: 500px;
+  background: #eee;
+  top: 80px;
+  left: 10%;
+}
+#zikrqalb iframe {
+  width: 100%;
+  height: 100%;
+}
+#zikrqalb button {
+  padding: 5px;
+  color: blue;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+.active {
+  display: block !important;
+}
 
 /* css for picture card container */
 div.pics {
@@ -310,17 +338,9 @@ div.pics {
 /* css for Biography */
 .biography {
   box-sizing: border-box;
-  width: 100%;
-  background: #dddd;
   padding: 0 1rem;
   min-height: 100vh;
-}
-.biography h1 {
-  font-size: 2rem;
-  padding: 1rem 0;
-}
-.biography p {
-  line-height: 28px;
+  line-height: 30px;
 }
 
 .scrolltotop {
@@ -332,11 +352,11 @@ div.pics {
   display: none;
 }
 footer {
-  background: #000000;
+  background: #448aff;
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: #f1f3f3e3;
+  color: #fff;
   padding: 2rem 1rem;
   gap: 5rem;
   justify-content: center;
@@ -344,7 +364,6 @@ footer {
   flex-shrink: 0;
 }
 footer a {
-  display: block;
   text-decoration: none;
   color: white;
   border-bottom: 1px solid grey;
@@ -381,13 +400,9 @@ footer .image-box img {
   object-fit: cover;
   object-position: center;
 }
-footer h1 {
-  color: skyblue;
-}
 footer p {
   font-size: 0.8rem;
   line-height: 20px;
-  color: #fff;
 }
 .lastItem {
   text-align: center;
