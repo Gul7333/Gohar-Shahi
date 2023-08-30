@@ -34,6 +34,7 @@ nav {
 }
 
 nav .web-title {
+  padding: 5px 0;
   margin-left: 1rem;
   color: #fff;
   font-size: 1.5rem;
@@ -408,4 +409,33 @@ footer p {
   text-align: center;
   font-size: 0.8rem;
   color: grey;
+}
+/* ________________________________ */
+#bookcontainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+#bookcontainer h1 {
+  padding: 14px 1rem;
+  
+}
+.book {
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+
+  background: #eee;
+}
+#bookreader {
+  display: none;
+  position: fixed;
+  background: #ddd;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 55;
 }
