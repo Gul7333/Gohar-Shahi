@@ -2,6 +2,9 @@ const body = document.querySelector("body");
 const popUp = document.getElementById("popup");
 const popUpImg = document.querySelector("#popup .popupimg");
 const popImg = document.querySelectorAll(".slideimg");
+
+// OpenPopup
+
 function openPopUp(imageSrc) {
   popUp.style.display = "block";
   popUpImg.src = imageSrc;
@@ -51,22 +54,12 @@ setInterval(nextCard, 6000);
 // ________________________________
 //rotate slide effect on profile photo
 
-const photoArray = [
-  "img0",
-  "img1",
-  "img2",
-  "img4",
-  "img5",
-  "img6",
-  "img7",
-  "img8",
-];
+// creating img element in profile div
 const photo = document.querySelector(".photo");
 fetch("Profile-photo.json")
   .then((response) => response.json())
   .then((data) => {
     console.log("fetch request start");
-    console.log(data);
     data.forEach((item) => {
       const img = document.createElement("img");
       img.classList.add("animatePhoto");
@@ -74,9 +67,12 @@ fetch("Profile-photo.json")
 
       photo.appendChild(img);
     });
+    
+    
+    // showing profilePhoto
     const profilePhoto = document.querySelectorAll(".animatePhoto");
-    console.log(profilePhoto + "ggg");
     var currentPhoto = 0;
+    
     function showProfilePhoto(index) {
       profilePhoto.forEach((item) => {
         item.classList.remove("active");
@@ -92,7 +88,6 @@ fetch("Profile-photo.json")
     }
     showProfilePhoto(0);
     setInterval(nextProfilePhoto, 5000);
-    // fetch request end
   });
 
 // function for zikre Qalb
@@ -117,6 +112,7 @@ window.addEventListener("scroll", () => {
 function scrollToTop() {
   window.scroll(0, 0);
 }
+// __________________________________
 // js for showing team Members in footer
 // first i fetch team.json file which contains name and photo url of team
 // member
@@ -128,7 +124,6 @@ fetch("Team.json")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((array) => {
-      console.log(array[1]);
       const teamImg = teamMemberBox.content.cloneNode(true);
       var img = teamImg.querySelector(".image-box img");
       img.src = array[1];

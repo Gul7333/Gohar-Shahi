@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 @import url("/RubikDirt.ttf");
 :root {
-  --day-color: white;
-  --night-color: black;
+  --theme: #448AFF;
+  
 }
 
 body {
@@ -21,6 +21,10 @@ h4,
 h5 {
   font-family: Georgia;
 }
+.prominent-Text {
+  color: #fff;
+  background: #000;
+}
 
 nav {
   display: flex;
@@ -28,28 +32,30 @@ nav {
   position: sticky;
   top: 0;
   z-index: 16;
-  background: #448aff;
+  background: white;
+  
   width: 100%;
   align-items: center;
-}
-
-nav .web-title {
-  padding: 5px 0;
-  margin-left: 1rem;
-  color: #fff;
-  font-size: 1.5rem;
-  font-family: kalam;
-  font-weight: bold;
 }
 .Logo {
   margin-right: 1rem;
   width: 1.4rem;
   z-index: 22;
 }
+nav .web-title {
+  
+  margin-left: 1rem;
+  color: #000;
+  font-size: 1.5rem;
+  font-family: kalam;
+  font-weight: bold;
+}
+
+
 .Logo div {
   width: 100%;
   height: 3px;
-  background: #fff;
+  background: #000;
   border-radius: 5px;
   margin-bottom: 4px;
   transition: all 0.3s;
@@ -66,6 +72,21 @@ nav .web-title {
 .Logo-cross div:nth-child(2) {
   width: 0;
 }
+@media (min-width: 400px) {
+  nav {
+    padding: 1rem 0;
+  }
+  nav .web-title {
+    font-size: 3rem;
+  }
+  .Logo {
+    width: 2rem;
+  }
+  .Logo div {
+    height: 6px;
+  }
+  
+}
 /* _________________________________ */
 /* Navigation popUp effect */
 .nav-pop {
@@ -78,10 +99,10 @@ nav .web-title {
   right: 0;
   height: 100%;
   width: 0;
-  color: #fff;
+  color: #000;
   box-sizing: border-box;
   overflow: scroll;
-  background: #448aff;
+  background: #fff;
   z-index: 13;
   transition: all 0.3s;
 }
@@ -92,7 +113,13 @@ nav .web-title {
   list-style: none;
   line-height: 40px;
   font-weight: bold;
+  
 }
+.nav-pop li a {
+  text-decoration: none;
+  color: #000;
+}
+
 
 /*_________________________________*/
 
@@ -103,6 +130,11 @@ nav .web-title {
   align-items: center;
   min-height: 100vh;
   width: 100%;
+}
+@media (min-width: 400px) {
+  .section1 {
+    min-height: fit-content;
+  }
 }
 
 /* __________________________________ */
@@ -180,14 +212,14 @@ div.photo-title {
 .button a {
   margin-top: 22px;
   width: 280px;
-  height: 30px;
+  padding: 1rem;
   border: 2px solid;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #80d8ff;
-  color: black;
+  background: black;
+  color: #fff;
   text-decoration: none;
   font-weight: bolder;
 }
@@ -195,6 +227,7 @@ div.photo-title {
 /* css for button hovering affect */
 div.button a:hover {
   background: white;
+  color: black;
 }
 
 /* __________________________________ */
@@ -234,9 +267,11 @@ div.button a:hover {
   width: 100%;
   height: 50px;
   margin-top: 70px;
-  overflow-x: hidden;
-  color: blue;
-  opacity: 0.5;
+  overflow: hidden;
+
+
+
+
 }
 
 .animated-Quote {
@@ -244,10 +279,15 @@ div.button a:hover {
   text-align: center;
   font-size: 1rem;
   width: 100%;
-
-  padding: 10px;
+  height: 100%;
+  padding: 0 1rem;
+  color: black;
+  font-weight: bold;
 }
 
+.animated-Quote p {
+  margin: 0;
+}
 .cont-animated-Quote .active2 {
   display: block;
   animation: slide 0.3s ease-out;
@@ -301,8 +341,7 @@ div.pics {
 }
 
 /*css for picture card   */
-.pics .card {
-}
+.pics .card {}
 
 /* css for pics to make them fit into div box */
 .pics div img {
@@ -352,24 +391,20 @@ div.pics {
   cursor: pointer;
   display: none;
 }
+/* footer footer css */
 footer {
-  background: #448aff;
+  background: black;
   display: flex;
   flex-direction: column;
   text-align: center;
   color: #fff;
   padding: 2rem 1rem;
-  gap: 5rem;
+  gap: 4rem;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
 }
-footer a {
-  text-decoration: none;
-  color: white;
-  border-bottom: 1px solid grey;
-  line-height: 30px;
-}
+
 footer .team {
   display: flex;
   width: 100%;
@@ -379,6 +414,17 @@ footer .team {
   padding: 8px;
   gap: 1rem;
 }
+footer a {
+  color: white;
+}
+.link a {
+  
+  
+  font-size: 3rem;
+  margin: 1rem;
+  
+}
+
 
 footer .team-img {
   display: inline-flex;
@@ -411,24 +457,51 @@ footer p {
   color: grey;
 }
 /* ________________________________ */
+
+
+
+
 #bookcontainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  row-gap: 2rem;
-}
-#bookcontainer h1 {
-  padding: 14px 1rem;
-  
+  margin-top: 70px;
+  gap: 3rem;
+  color: #424242;
 }
 .book {
-  width: 200px;
-  height: 250px;
+  width: 100%;
+  padding: 10px;
   border-radius: 10px;
-
+  text-align: center;
   background: #eee;
+  font-family: Georgia;
+  box-sizing: border-box;
+  color: #424242;
 }
+@media (min-width: 400px) {
+  .book {
+    width: 900px;
+  }
+}
+.book img {
+  width: 100%;
+  border-radius: 12px;
+}
+.book p {
+  font-size: 10px;
+}
+
+.book button {
+  background: black;
+  border: none;
+  border-radius: 3px;
+}
+.book button a {
+  text-decoration: none;
+  color: #fff;
+}
+
 #bookreader {
   display: none;
   position: fixed;
