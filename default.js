@@ -1,6 +1,5 @@
 const body = document.querySelector("body");
 
-
 // navigation Popup effect
 
 const navPop = document.querySelector(".nav-pop");
@@ -10,6 +9,13 @@ function navtoggle() {
   Logo.classList.toggle("Logo-cross");
   body.classList.toggle("body-hidden");
 }
+// __________________________________
+// const navItem = navPop.querySelectorAll("li a")
+// console.log(navItem)
+// let activeLink = sessionStorage.getItem("activeLink") 
+// if (activeLink) {
+//   navItem[activeLink].classList.add("activeNavItem")
+// }
 // __________________________________
 // js for showing team Members in footer
 // first i fetch team.json file which contains name and photo url of team

@@ -30,6 +30,21 @@ function navtoggle() {
   body.classList.toggle("body-hidden");
 }
 // ________________________________
+
+const navItem = navPop.querySelectorAll("li a");
+console.log(navItem.length);
+function addBlue(e) {
+  console.log("started");
+  for (let i = 0; i < navItem.length; i++) {
+    if (navItem[i] === e.target) {
+      navItem[i].classList.add("activeNavItem");
+    } else {
+      navItem[i].classList.remove("activeNavItem");
+    }
+  }
+}
+navPop.addEventListener("click", addBlue);
+
 // slide effect for quotes
 const quote = document.querySelectorAll(".animated-Quote");
 
@@ -67,12 +82,11 @@ fetch("Profile-photo.json")
 
       photo.appendChild(img);
     });
-    
-    
+
     // showing profilePhoto
+
     const profilePhoto = document.querySelectorAll(".animatePhoto");
     var currentPhoto = 0;
-    
     function showProfilePhoto(index) {
       profilePhoto.forEach((item) => {
         item.classList.remove("active");
@@ -84,12 +98,12 @@ fetch("Profile-photo.json")
       if (currentPhoto >= profilePhoto.length) {
         currentPhoto = 0;
       }
+      console.log('photo added')
       showProfilePhoto(currentPhoto);
     }
     showProfilePhoto(0);
     setInterval(nextProfilePhoto, 5000);
   });
-
 // function for zikre Qalb
 const zikrQalb = document.getElementById("zikrqalb");
 function zikrqalb() {

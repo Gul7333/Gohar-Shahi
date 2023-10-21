@@ -1,12 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
-@import url("/RubikDirt.ttf");
 :root {
   --theme: #448AFF;
-  
 }
-
 body {
   margin: 0;
   scroll-behavior: smooth;
@@ -24,8 +20,8 @@ h5 {
 .prominent-Text {
   color: #fff;
   background: #000;
+  border-radius: 4px;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -33,7 +29,6 @@ nav {
   top: 0;
   z-index: 16;
   background: white;
-  
   width: 100%;
   align-items: center;
 }
@@ -43,15 +38,12 @@ nav {
   z-index: 22;
 }
 nav .web-title {
-  
   margin-left: 1rem;
   color: #000;
   font-size: 1.5rem;
   font-family: kalam;
   font-weight: bold;
 }
-
-
 .Logo div {
   width: 100%;
   height: 3px;
@@ -62,7 +54,6 @@ nav .web-title {
 }
 .Logo-cross div:nth-child(1) {
   transform: rotateZ(40deg);
-
   transform-origin: 0;
 }
 .Logo-cross div:nth-child(3) {
@@ -72,20 +63,9 @@ nav .web-title {
 .Logo-cross div:nth-child(2) {
   width: 0;
 }
-@media (min-width: 400px) {
-  nav {
-    padding: 1rem 0;
-  }
-  nav .web-title {
-    font-size: 3rem;
-  }
-  .Logo {
-    width: 2rem;
-  }
-  .Logo div {
-    height: 6px;
-  }
-  
+/* css for navigation items*/
+.activeNavItem {
+  color: blue !important;
 }
 /* _________________________________ */
 /* Navigation popUp effect */
@@ -113,14 +93,43 @@ nav .web-title {
   list-style: none;
   line-height: 40px;
   font-weight: bold;
-  
+
 }
+
 .nav-pop li a {
   text-decoration: none;
   color: #000;
 }
+.nav-pop li .visited {
+  color: #fff;
+  background: #000;
 
+}
+@media (min-width:400px) {
+  .nav-pop {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    gap: 10px;
+    margin-right: 1rem;
 
+  }
+  nav {
+    padding: 1rem 0;
+  }
+  nav .web-title {
+    font-size: 3rem;
+  }
+  .Logo {
+    display: none;
+    width: 2rem;
+  }
+  .Logo div {
+    height: 6px;
+  }
+}
 /*_________________________________*/
 
 /* First Section of web */
@@ -226,6 +235,7 @@ div.photo-title {
 
 /* css for button hovering affect */
 div.button a:hover {
+  transform: rotateY(20deg);
   background: white;
   color: black;
 }
@@ -418,11 +428,11 @@ footer a {
   color: white;
 }
 .link a {
-  
-  
+
+
   font-size: 3rem;
   margin: 1rem;
-  
+
 }
 
 
@@ -470,30 +480,38 @@ footer p {
   color: #424242;
 }
 .book {
-  width: 100%;
-  padding: 10px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  background: #eee;
   font-family: Georgia;
   box-sizing: border-box;
-  color: #424242;
+  color: #333;
+  box-shadow: 1px 1px 10px #333;
 }
+
 @media (min-width: 400px) {
   .book {
-    width: 900px;
+    max-width: 700px;
+    display: flex;
   }
 }
 .book img {
   width: 100%;
+  aspect-ratio: 9/13;
   border-radius: 12px;
+  box-shadow: 2px 1px 10px #ddd;
 }
+.book .img {}
 .book p {
+  color: #333;
   font-size: 10px;
 }
 
 .book button {
   background: black;
+  padding: 5px 10px;
   border: none;
   border-radius: 3px;
 }
