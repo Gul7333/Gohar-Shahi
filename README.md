@@ -1,4 +1,4 @@
-**Now Every one Can Love God, Regardless of Religion.**
+**Now Every one Can Love and see God, Regardless of any Religion.**
 
 ## [Gohar-Shahi](https://gul7333.github.io/Gohar-Shahi/)
 
