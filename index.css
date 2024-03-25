@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 :root {
   --theme: #448AFF;
+  
 }
 body {
   margin: 0;
@@ -9,6 +10,7 @@ body {
 }
 .body-hidden {
   overflow: hidden;
+  
 }
 h1,
 h2,
@@ -19,7 +21,7 @@ h5 {
 }
 .prominent-Text {
   color: #fff;
-  background: #000;
+  background: #333;
   border-radius: 4px;
 }
 nav {
@@ -29,6 +31,9 @@ nav {
   top: 0;
   z-index: 16;
   background: white;
+  
+  padding: 8px 0;
+  box-sizing: border-box;
   width: 100%;
   align-items: center;
 }
@@ -39,15 +44,16 @@ nav {
 }
 nav .web-title {
   margin-left: 1rem;
-  color: #000;
-  font-size: 1.5rem;
+  color: #424242;
+  font-size: 1em;
   font-family: kalam;
   font-weight: bold;
+  line-height: 0;
 }
 .Logo div {
   width: 100%;
   height: 3px;
-  background: #000;
+  background: #424242;
   border-radius: 5px;
   margin-bottom: 4px;
   transition: all 0.3s;
@@ -84,6 +90,7 @@ nav .web-title {
   overflow: scroll;
   background: #fff;
   z-index: 13;
+  line-height: 0;
   transition: all 0.3s;
 }
 .activenav {
@@ -102,7 +109,9 @@ nav .web-title {
 }
 .nav-pop li .visited {
   color: #fff;
+  padding: 4px 6px;
   background: #000;
+  border-radius: 6px;
 
 }
 @media (min-width:400px) {
@@ -113,7 +122,9 @@ nav .web-title {
     height: fit-content;
     width: fit-content;
     gap: 10px;
+    margin: 0;
     margin-right: 1rem;
+    line-height: 0;
 
   }
   nav {
@@ -164,11 +175,13 @@ div.photo {
   display: none;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 img.active {
   display: block;
-  animation: slidePhoto 0.4s ease-in;
+  animation: slidePhoto 0.6s ease-in;
   transition: all 1s;
+  overflow: hidden;
 }
 @keyframes slidePhoto {
   0% {
@@ -216,29 +229,90 @@ div.photo-title {
 /* css for profile photo title description */
 .photo-des {
   margin-top: 15px;
+display: flex;
+width: 75%;
+text-align: center;
+overflow: scroll;
+/* animation: scroll 15s ease infinite; */
+
+}
+.photo-des div {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  animation: scroll 15s ease infinite;
+
+  
+}
+.photo-des::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.photo-des::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+@keyframes scroll {
+
+  0%,
+  20% {
+    transform: translateX(0);
+    /* Show the first quote */
+  }
+
+  25%,
+  45% {
+    transform: translateX(-100%);
+    /* Move to the second quote */
+  }
+
+  50%,
+  70% {
+    transform: translateX(-200%);
+    /* Move to the third quote */
+  }
+
+  75%,
+  95% {
+    transform: translateX(-300%);
+    /* Move to the fourth quote */
+  }
+
+  100% {
+    transform: translateX(0);
+    /* Repeat the animation */
+  }
 }
 
 /* css for button under profile photo title */
+.button {
+  width: 90%;
+  max-width: 600px;
+}
+
 .button a {
+
   margin-top: 22px;
-  width: 280px;
-  padding: 1rem;
+  
+  padding: 1em;
   border: 2px solid;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background: #212121;
   color: #fff;
   text-decoration: none;
   font-weight: bolder;
+  transition: all 0.5s;
 }
 
 /* css for button hovering affect */
 div.button a:hover {
-  transform: rotateY(20deg);
-  background: white;
-  color: black;
+  transform: scale(1);
+  background: #232323bb;
+  /* background: white; */
+  /* color: black; */
 }
 
 /* __________________________________ */
@@ -321,6 +395,7 @@ div.button a:hover {
 #zikrqalb {
   display: none;
   position: fixed;
+  z-index: 6;
   width: 80%;
   height: 500px;
   background: #eee;
@@ -332,8 +407,11 @@ div.button a:hover {
   height: 100%;
 }
 #zikrqalb button {
-  padding: 5px;
-  color: blue;
+  padding: 5px 1em;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  background: #555;
   position: absolute;
   top: -6px;
   right: -6px;
@@ -385,6 +463,10 @@ div.pics {
   font-size: 2rem;
   left: 1rem;
   bottom: 40px;
+}
+.main {
+  max-width: 900px;
+  margin: 0 auto;
 }
 /* css for Biography */
 .biography {
