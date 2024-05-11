@@ -142,7 +142,7 @@ fetch("Team.json")
       var img = teamImg.querySelector(".image-box img");
       img.src = array[1];
       var title = teamImg.querySelector(".image-title");
-      title.innerText = array[0];
+      title.innerHTML = `<a href="https://www.facebook.com/riazul.jannah" >${array[0]}</a>`;
       team.appendChild(teamImg);
     });
   });
