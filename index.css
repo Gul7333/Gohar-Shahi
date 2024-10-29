@@ -26,11 +26,14 @@ h5 {
 }
 nav {
   display: flex;
+  flex-shrink: 0;
+  flex-grow: 1;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 16;
   background: white;
+  
   
   padding: 8px 0;
   box-sizing: border-box;
@@ -119,23 +122,28 @@ nav .web-title {
     position: relative;
     display: flex;
     flex-direction: row;
-    height: fit-content;
-    width: fit-content;
+    /* flex-grow: 7; */
+    
+   /* flex-shrink: 0; */
     gap: 10px;
-    margin: 0;
+    /* margin: 0; */
     margin-right: 1rem;
-    line-height: 0;
+    /* line-height: 0; */
+    border: #000 2px solid;
+    overflow: hidden;
+   
 
   }
   nav {
     padding: 1rem 0;
+
   }
   nav .web-title {
     font-size: 3rem;
   }
   .Logo {
     display: none;
-    width: 2rem;
+    width: 0;
   }
   .Logo div {
     height: 6px;
