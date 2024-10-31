@@ -4,12 +4,14 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="index.css" type="text/css" media="all" />
+ 
+
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fff" />
-
+  <link rel="stylesheet" href="tingle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css"
     integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,6 +21,8 @@
 
 
 <body>
+    <!-- Button to open the dialog -->
+
   
   <nav>
     <div class="web-title">Gohar Shahi</div>
@@ -123,21 +127,20 @@
         <img src="images/MoonPicture.jpg" alt="" />
         <h3>HOW HIS HOLLINESS CAME INTO THIS WORLD, LISTEN IT FROM GOHAR SHAHI CLOSE DEVOTEE.</h3>
         <div style="aspect-ratio: 16/9;">
-
           <iframe 
           width="100%" 
           height="100%"
-          
-          
-          src="https://www.youtube.com/embed/sJRe-0ZM6LU" 
+          src="https://www.youtube.com/embed/sJRe-0ZM6LU"
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
+
+
       </div>
         <br />
-        He is the Person who came to Earth to save human, Give them the
+        His Holiness, who came to Earth to save human, Give them the
         Knowledge of Heart which they were seeking for million of years.
         <br />
         Hundred of Thousands Died in search of GOD, Thousands got Lost in way to
@@ -180,7 +183,7 @@
         permission from God. God would not come to this earth to Give you
         permission, He sent Gohar Shahi to give you permission on behalf of him.
         You just have to say Word ALLAH with Sarkar Gohar Shahi Voice.
-        <strong>[<a onclick="zikrqalb()" style="color: blue">Say Here</a>]</strong>
+        <strong>[<a onclick="tingleModel()" style="color: blue">Say Here</a>]</strong>
         <br />
       </li>
       <!-- html for popup which appear on zikr qalb -->
@@ -190,11 +193,11 @@
         <button onclick="zikrqalb()">Close</button>
       </div>
       <!-- zikr qalb audio -->
-      <audio controls>
-        <source src="https://drive.google.com/uc?export=download&id=1BLYnkE7XvIxhP8tR2_ZHGXXByWIdTZcx"
-          type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
+     <audio controls>
+    <source src="https://docs.google.com/uc?export=download&id=1BLYnkE7XvIxhP8tR2_ZHGXXByWIdTZcx" type="audio/mp3" />
+    Your browser does not support the audio element.
+</audio>
+
 
       <br />
       <p>
@@ -353,6 +356,56 @@
   <div class="lastItem" id="lastitem">Sarkar Riaz Ahmed Gohar Shah©®</div>
 
   <script src="index.js" type="text/javascript" charset="utf-8"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script> -->
+  <script src="tingle.min.js" type="text/javascript"></script>
+  <script>
+
+
+
+function tingleModel() {
+  // instanciate new modal
+var modal = new tingle.modal({
+    footer: true,
+    stickyFooter: false,
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close",
+    cssClass: ['custom-class-1', 'custom-class-2'],
+    onOpen: function() {
+        console.log('modal open');
+    },
+    onClose: function() {
+        console.log('modal closed');
+      
+        // iframe.src = ""; // Clears the src to stop playback
+    },
+    beforeClose: function() {  
+      const iframe = document.getElementById("videoIframe");
+        iframe.src = "about:blank"; // Set src to a blank URL to ensure stopping
+        iframe.parentNode.removeChild(iframe);
+
+        // here's goes some logic
+        // e.g. save content before closing the modal
+        return true; // close the modal
+        return false; // nothing happens
+    }
+});
+
+// set content
+modal.setContent('<div style="aspect-ratio: 9/16;max-width: fit-content;margin: auto;" ><iframe id="videoIframe" src="https://drive.google.com/file/d/1BNq9YydGGATYOD9beXP4SQiw_csItkKY/preview" width="100%" height="100%" loading="lazy"></iframe></div>');
+
+
+// add another button
+modal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger', function() {
+    // here goes some logic
+    modal.close();
+});
+
+// open modal
+modal.open();
+
+}
+    
+  </script>
 </body>
 
 </html>

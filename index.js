@@ -83,6 +83,7 @@ fetch("Profile-photo.json")
       photo.appendChild(img);
     });
 
+
     // showing profilePhoto
 
     const profilePhoto = document.querySelectorAll(".animatePhoto");
