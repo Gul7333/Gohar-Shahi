@@ -3,10 +3,12 @@
 :root {
   --theme: #448AFF;
   
+  
 }
 body {
   margin: 0;
   scroll-behavior: smooth;
+  border: 1px solid black;
 }
 .body-hidden {
   overflow: hidden;
@@ -24,6 +26,11 @@ h5 {
   background: #333;
   border-radius: 4px;
 }
+.swiper {
+  width: "100%";
+  overflow: hidden;
+  height: 300px;
+}
 nav {
   display: flex;
   flex-shrink: 0;
@@ -32,9 +39,13 @@ nav {
   position: sticky;
   top: 0;
   z-index: 16;
-  background: white;
+  /* background: white; */
+  background: rgba(255, 255, 255, 0.6); /* Slightly transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);  */
   
   
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
   padding: 8px 0;
   box-sizing: border-box;
   width: 100%;
@@ -91,10 +102,11 @@ nav .web-title {
   color: #000;
   box-sizing: border-box;
   overflow: scroll;
-  background: #fff;
   z-index: 13;
   line-height: 0;
+  
   transition: all 0.3s;
+  
 }
 .activenav {
   width: 100%;
@@ -134,6 +146,7 @@ nav .web-title {
     /* line-height: 0; */
     /* border: #000 2px solid; */
     overflow: hidden;
+
    
 
   }
@@ -357,17 +370,15 @@ div.button a:hover {
 .section2 {
   text-align: center;
   width: 100%;
+ 
 }
 .cont-animated-Quote {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 50px;
   margin-top: 70px;
   overflow: hidden;
-
-
-
-
 }
 
 .animated-Quote {
@@ -477,6 +488,7 @@ div.pics {
 }
 .main {
   max-width: 900px;
+  overflow: hidden;
   margin: 0 auto;
 }
 /* css for Biography */
@@ -489,7 +501,7 @@ div.pics {
 
 .scrolltotop {
   position: fixed;
-  background: yellow;
+  /* background: yellow; */
   bottom: 20px;
   right: 20px;
   cursor: pointer;

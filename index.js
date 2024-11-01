@@ -147,3 +147,11 @@ fetch("Team.json")
       team.appendChild(teamImg);
     });
   });
+
+
+
+
+  
+
+
+console.log(swiper)

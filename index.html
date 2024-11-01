@@ -4,7 +4,49 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="index.css" type="text/css" media="all" />
- 
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<!-- swiper cdn -->
+<!-- <script src="swiper.min.js"></script> -->
+
+  <style>
+    /* Center modal footer */
+    .tingle-modal-box__footer {
+      display: flex;
+     
+      justify-content: right;
+      gap: 10px; /* Space between buttons */
+    }
+
+    /* Styling for OK and Cancel buttons */
+    .custom-ok-btn,
+    .custom-cancel-btn {
+      background-color: #1a426d ;
+      color: #fff;
+      border: none;
+      
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    .custom-ok-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Specific styling for the Cancel button */
+    .custom-cancel-btn {
+      background-color: #dc3545;
+    }
+
+    .custom-cancel-btn:hover {
+      background-color: #c82333;
+    }
+  </style>
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -50,6 +92,8 @@
   </nav>
   <!-- This website is divided into multiple section-->
   <div class="main">
+    <!-- Slider main container -->
+
     <!--No 1-->
     <section class="section1">
       <!-- profile photo -->
@@ -76,7 +120,7 @@
             class="fab fa-facebook-f"></i>ollow</a>
       </div>
       <div class="button">
-        <a id="zikrqalbb" href="https://wa.me/+447472540642">Get Zikr Qalb</a>
+        <a id="zikrqalbb" onclick="tingleModel()" >Get Zikr Qalb</a>
       </div>
       <section class="section2">
         <div class="cont-animated-Quote">
@@ -124,8 +168,44 @@
         <strong>These religion also predicted that His Holiness Picture will be visible on
           Moon</strong>
         <br />
-        <img src="images/MoonPicture.jpg" alt="" />
-        <h3>HOW HIS HOLLINESS CAME INTO THIS WORLD, LISTEN IT FROM GOHAR SHAHI CLOSE DEVOTEE.</h3>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="./images/MoonPicture.jpg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./moon_1.jpg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./moon_2.jpg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+        
+            </div>
+            <div class="swiper-slide">
+              <img src="./moon_3.jpeg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+        
+            </div>
+            <div class="swiper-slide">
+              <img src="./moon_4.jpeg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+        
+            </div>
+            <div class="swiper-slide">
+              <img src="./moon_5.jpeg" alt="" width="100%" height="100%" style="object-fit: contain;" srcset="">
+        
+            </div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>        <h3>HOW HIS HOLLINESS CAME INTO THIS WORLD, LISTEN IT FROM GOHAR SHAHI CLOSE DEVOTEE.</h3>
         <div style="aspect-ratio: 16/9;">
           <iframe 
           width="100%" 
@@ -188,7 +268,7 @@
       </li>
       <!-- html for popup which appear on zikr qalb -->
       <div id="zikrqalb">
-        <iframe src="https://drive.google.com/file/d/1BNq9YydGGATYOD9beXP4SQiw_csItkKY/preview" width="" height=""
+        <iframe src="videomodel.html" width="" height=""
           loading="lazy"></iframe>
         <button onclick="zikrqalb()">Close</button>
       </div>
@@ -351,7 +431,10 @@
       </p>
     </div>
   </footer>
-  <div class="scrolltotop" onclick="scrollToTop()">Go-To-Top</div>
+  <div class="scrolltotop" onclick="scrollToTop()">
+
+    <img src="./back-to-top.png" alt="" width="40" height="40" >
+  </div>
 
   <div class="lastItem" id="lastitem">Sarkar Riaz Ahmed Gohar Shah©®</div>
 
@@ -369,13 +452,13 @@ var modal = new tingle.modal({
     stickyFooter: false,
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close",
-    cssClass: ['custom-class-1', 'custom-class-2'],
+    cssClass: ['tingle-modal__footer'],
     onOpen: function() {
         console.log('modal open');
     },
     onClose: function() {
         console.log('modal closed');
-      
+
         // iframe.src = ""; // Clears the src to stop playback
     },
     beforeClose: function() {  
@@ -395,7 +478,7 @@ modal.setContent('<div style="aspect-ratio: 9/16;max-width: fit-content;margin: 
 
 
 // add another button
-modal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger', function() {
+modal.addFooterBtn('Close', 'tingle-btn custom-cancel-btn', function() {
     // here goes some logic
     modal.close();
 });
@@ -403,9 +486,40 @@ modal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger', function() {
 // open modal
 modal.open();
 
+
+
+
 }
-    
+
+
+
+
+
+  
   </script>
+     <!-- Include Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script>
+         // Initialize Swiper
+         const swiper = new Swiper('.swiper', {
+             // Optional parameters
+             effect: 'cube',
+            
+             loop: true,
+             autoplay: {
+   delay: 5000,
+ },
+             pagination: {
+                 el: '.swiper-pagination',
+                 clickable: true,
+             },
+             navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+             },
+  
+         });
+     </script>
 </body>
 
 </html>
