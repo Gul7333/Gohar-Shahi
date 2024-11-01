@@ -43,7 +43,7 @@ function addBlue(e) {
     }
   }
 }
-navPop.addEventListener("click", addBlue);
+// navPop.addEventListener("click", addBlue);
 
 // slide effect for quotes
 const quote = document.querySelectorAll(".animated-Quote");
@@ -151,7 +151,3 @@ fetch("Team.json")
 
 
 
-  
-
-
-console.log(swiper)
