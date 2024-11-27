@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 :root {
   --theme: #448AFF;
   
@@ -10,6 +11,7 @@ body {
 }
 .body-hidden {
   overflow: hidden;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
   
 }
 h1,
@@ -26,11 +28,14 @@ h5 {
 }
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: sticky;
   top: 0;
   z-index: 16;
   background: white;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Applies the blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   
   padding: 8px 0;
   box-sizing: border-box;
@@ -45,8 +50,10 @@ nav {
 nav .web-title {
   margin-left: 1rem;
   color: #424242;
-  font-size: 1em;
-  font-family: kalam;
+  font-size: 1.4em;
+  /* font-family: 'Courier New', Courier, monos; */
+  font-family: 'Salsa';
+  flex-shrink: 0;
   font-weight: bold;
   line-height: 0;
 }
@@ -92,6 +99,7 @@ nav .web-title {
   z-index: 13;
   line-height: 0;
   transition: all 0.3s;
+  overflow: hidden;
 }
 .activenav {
   width: 100%;
@@ -131,7 +139,7 @@ nav .web-title {
     padding: 1rem 0;
   }
   nav .web-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .Logo {
     display: none;
@@ -166,8 +174,10 @@ div.photo {
   width: 150px;
   height: 150px;
   border: 3px solid skyblue;
-  border-radius: 50%;
+  border-radius: 24%;
+  rotate: 10deg;
   overflow: hidden;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 /* css to make profile photo fit in div */
@@ -510,11 +520,24 @@ footer .team {
 }
 footer a {
   color: white;
+  list-style: none;
+}
+footer .team a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
 }
 .link a {
 
 
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 1rem;
+
+}
+.linkprofile a {
+
+
+  font-size: 1.3rem;
   margin: 1rem;
 
 }
