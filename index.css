@@ -33,7 +33,7 @@ body.dark-theme {
   position: fixed;
   z-index: 777;
 bottom: 30px;
-right: 20px;
+left:  20px;
   /* padding: 12px; */
   cursor: pointer;
   background-color: #ddd;
