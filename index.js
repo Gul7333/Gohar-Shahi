@@ -2,6 +2,28 @@ const body = document.querySelector("body");
 const popUp = document.getElementById("popup");
 const popUpImg = document.querySelector("#popup .popupimg");
 const popImg = document.querySelectorAll(".slideimg");
+const themeToggle = document.getElementById("themeToggle");
+
+// Initial theme state
+let isDarkTheme = false;
+
+
+// Add click event listener to toggle button
+themeToggle.addEventListener("click", () => {
+    if (isDarkTheme) {
+        // Switch to light theme
+        body.classList.remove("dark-theme");
+        body.classList.add("light-theme");
+        themeToggle.textContent = "🌙";
+    } else {
+        // Switch to dark theme
+        body.classList.remove("light-theme");
+        body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+    }
+    isDarkTheme = !isDarkTheme;
+});
+
 
 // OpenPopup
 

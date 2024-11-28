@@ -9,6 +9,25 @@ function navtoggle() {
   Logo.classList.toggle("Logo-cross");
   body.classList.toggle("body-hidden");
 }
+// Initial theme state
+let isDarkTheme = false;
+
+
+// Add click event listener to toggle button
+themeToggle.addEventListener("click", () => {
+    if (isDarkTheme) {
+        // Switch to light theme
+        body.classList.remove("dark-theme");
+        body.classList.add("light-theme");
+        themeToggle.textContent = "🌙";
+    } else {
+        // Switch to dark theme
+        body.classList.remove("light-theme");
+        body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+    }
+    isDarkTheme = !isDarkTheme;
+});
 // __________________________________
 // const navItem = navPop.querySelectorAll("li a")
 // console.log(navItem)
