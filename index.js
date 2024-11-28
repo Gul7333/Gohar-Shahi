@@ -16,14 +16,14 @@ const darkThemeColor = '#333333'; // Dark theme
 // Add click event listener to toggle button
 themeToggle.addEventListener("click", () => {
     if (isDarkTheme) {
-      themeMetaTag.setAttribute('content', darkThemeColor); // Dark theme
-
-        // Switch to light theme
-        body.classList.remove("dark-theme");
-        body.classList.add("light-theme");
-        themeToggle.textContent = "🌙";
-    } else {
+      
       themeMetaTag.setAttribute('content', lightThemeColor); // Light theme
+      // Switch to light theme
+      body.classList.remove("dark-theme");
+      body.classList.add("light-theme");
+      themeToggle.textContent = "🌙";
+    } else {
+      themeMetaTag.setAttribute('content', darkThemeColor); // Dark theme
 
         // Switch to dark theme
         body.classList.remove("light-theme");
