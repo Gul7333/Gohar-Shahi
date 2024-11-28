@@ -8,9 +8,9 @@
 body {
   margin: 0;
   scroll-behavior: smooth;
-  
+  overflow: scroll;
   --navPopColor: #fff;
-
+min-height: 100vh;
   
 
 }
@@ -30,16 +30,17 @@ body.dark-theme {
 
 /* Toggle button styles */
 .toggle-button {
-  /* position: fixed; */
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  z-index: 777;
+bottom: 30px;
+right: 20px;
   /* padding: 12px; */
   cursor: pointer;
-  background-color: gray;
-  color: white;
+  background-color: #ddd;
+
   border-radius: 50%;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   user-select: none;
   transition: background-color 0.3s ease;
 }
@@ -353,14 +354,14 @@ div.photo-title {
 
 /* css for profile photo title description */
 .photo-des {
-  margin-top: 15px;
+  margin-top: 10px;
 display: flex;
 width: 75%;
 height: 33px;
 /* height: fit-content; */
 overflow: hidden;
 /* height: 120px; */
-margin: auto;
+
 margin-bottom: 0;
 text-align: center;
 overflow: scroll;
