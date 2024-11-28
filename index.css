@@ -248,7 +248,7 @@ nav .web-title {
     margin: 0;
     margin-right: 1rem;
     line-height: 0;
-
+background-color: unset;
   }
   nav {
     padding: 1rem 0;
