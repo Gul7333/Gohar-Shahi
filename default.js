@@ -1,6 +1,45 @@
 const body = document.querySelector("body");
 
-// navigation Popup effect
+
+
+
+const themeMetaTag = document.querySelector('meta[name="theme-color"]');
+
+let isDarkTheme = false;
+
+// Define light and dark theme colors
+const lightThemeColor = '#ffffff'; // Light theme
+const darkThemeColor = '#333333'; // Dark theme
+
+
+
+// Add click event listener to toggle button
+themeToggle.addEventListener("click", () => {
+    if (isDarkTheme) {
+      themeMetaTag.setAttribute('content', darkThemeColor); // Dark theme
+
+        // Switch to light theme
+        body.classList.remove("dark-theme");
+        body.classList.add("light-theme");
+        themeToggle.textContent = "🌙";
+    } else {
+      themeMetaTag.setAttribute('content', lightThemeColor); // Light theme
+
+        // Switch to dark theme
+        body.classList.remove("light-theme");
+        body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+    }
+    isDarkTheme = !isDarkTheme;
+});
+
+
+
+
+
+
+
+
 
 const navPop = document.querySelector(".nav-pop");
 const Logo = document.querySelector(".Logo");
@@ -9,25 +48,6 @@ function navtoggle() {
   Logo.classList.toggle("Logo-cross");
   body.classList.toggle("body-hidden");
 }
-// Initial theme state
-let isDarkTheme = false;
-
-
-// Add click event listener to toggle button
-themeToggle.addEventListener("click", () => {
-    if (isDarkTheme) {
-        // Switch to light theme
-        body.classList.remove("dark-theme");
-        body.classList.add("light-theme");
-        themeToggle.textContent = "🌙";
-    } else {
-        // Switch to dark theme
-        body.classList.remove("light-theme");
-        body.classList.add("dark-theme");
-        themeToggle.textContent = "☀️";
-    }
-    isDarkTheme = !isDarkTheme;
-});
 // __________________________________
 // const navItem = navPop.querySelectorAll("li a")
 // console.log(navItem)

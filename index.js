@@ -3,19 +3,28 @@ const popUp = document.getElementById("popup");
 const popUpImg = document.querySelector("#popup .popupimg");
 const popImg = document.querySelectorAll(".slideimg");
 const themeToggle = document.getElementById("themeToggle");
+const themeMetaTag = document.querySelector('meta[name="theme-color"]');
 
-// Initial theme state
 let isDarkTheme = false;
+
+// Define light and dark theme colors
+const lightThemeColor = '#ffffff'; // Light theme
+const darkThemeColor = '#333333'; // Dark theme
+
 
 
 // Add click event listener to toggle button
 themeToggle.addEventListener("click", () => {
     if (isDarkTheme) {
+      themeMetaTag.setAttribute('content', darkThemeColor); // Dark theme
+
         // Switch to light theme
         body.classList.remove("dark-theme");
         body.classList.add("light-theme");
         themeToggle.textContent = "🌙";
     } else {
+      themeMetaTag.setAttribute('content', lightThemeColor); // Light theme
+
         // Switch to dark theme
         body.classList.remove("light-theme");
         body.classList.add("dark-theme");
