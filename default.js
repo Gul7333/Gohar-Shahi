@@ -1,36 +1,53 @@
 const body = document.querySelector("body");
-
-
+const themeToggle = document.getElementById("themeToggle");
 
 
 const themeMetaTag = document.querySelector('meta[name="theme-color"]');
 
-let isDarkTheme = false;
+let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
 
 // Define light and dark theme colors
-const lightThemeColor = '#ffffff'; // Light theme
-const darkThemeColor = '#333333'; // Dark theme
+const lightThemeColor = "#ffffff"; // Light theme
+const darkThemeColor = "#333333"; // Dark theme
 
+function toggleTheme() {
+  if (isDarkTheme) {
+    // Switch to light theme
+    themeMetaTag.setAttribute("content", lightThemeColor); // Light theme
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
+    themeToggle.textContent = "☀️";
+    localStorage.setItem("isDarkTheme", "false");
+  } else {
+    // Switch to dark theme
+    themeMetaTag.setAttribute("content", darkThemeColor); // Dark theme
+    body.classList.remove("light-theme");
+    body.classList.add("dark-theme");
+    themeToggle.textContent = "🌙";
+    localStorage.setItem("isDarkTheme", "true");
+  }
+  isDarkTheme = !isDarkTheme;
+}
 
+function setTheme() {
+  if (isDarkTheme) {
+    themeMetaTag.setAttribute("content", darkThemeColor); // Light theme
+    // Switch to light theme
+    body.classList.add("dark-theme");
+    themeToggle.textContent = "🌙";
+  } else {
+    themeMetaTag.setAttribute("content", darkThemeColor); // Dark theme
+    // Switch to dark theme
+    body.classList.add("light-theme");
+    themeToggle.textContent = "☀️";
+  }
+}
+
+setTheme();
 
 // Add click event listener to toggle button
 themeToggle.addEventListener("click", () => {
-    if (isDarkTheme) {
-      themeMetaTag.setAttribute('content', lightThemeColor); // Light theme
-      
-      // Switch to light theme
-      body.classList.remove("dark-theme");
-      body.classList.add("light-theme");
-      themeToggle.textContent = "🌙";
-    } else {
-      themeMetaTag.setAttribute('content', darkThemeColor); // Dark theme
-
-        // Switch to dark theme
-        body.classList.remove("light-theme");
-        body.classList.add("dark-theme");
-        themeToggle.textContent = "☀️";
-    }
-    isDarkTheme = !isDarkTheme;
+  toggleTheme();
 });
 
 
