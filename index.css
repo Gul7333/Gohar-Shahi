@@ -3,13 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 :root {
   --theme: #000;
+  --navPopColor: #fff;
+  --linkColor: rgb(116, 108, 10);
+
   
+}
+a {
+  color: var(--linkColor);
 }
 body {
   margin: 0;
   scroll-behavior: smooth;
   overflow: scroll;
-  --navPopColor: #fff;
 min-height: 100vh;
   
 
@@ -26,10 +31,12 @@ body.dark-theme {
   color: white;
   --theme: #fff;
   --navPopColor: #333;
+  --linkColor: skyblue;
 }
 
 /* Toggle button styles */
 .toggle-button {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: fixed;
   z-index: 777;
 bottom: 30px;
@@ -740,6 +747,9 @@ footer .team a {
   font-size: 2rem;
   margin: 1rem;
 
+}
+.linkprofile {
+  
 }
 .linkprofile a {
 
