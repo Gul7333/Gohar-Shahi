@@ -94,3 +94,7 @@ fetch("Team.json")
       team.appendChild(teamImg);
     });
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    initReadMore('.readmore');
+  });
+  

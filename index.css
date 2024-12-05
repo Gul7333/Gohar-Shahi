@@ -4,12 +4,13 @@
 :root {
   --theme: #000;
   --navPopColor: #fff;
-  --linkColor: rgb(116, 108, 10);
+  --linkColor: rgb(32, 45, 163);
 
   
 }
 a {
   color: var(--linkColor);
+  text-decoration-line: none;
 }
 body {
   margin: 0;
@@ -24,7 +25,10 @@ body.light-theme {
   background-color: white;
   color: black;
 }
-
+p{
+  line-height: 30px;
+  padding-inline: 6px;
+}
 /* Dark theme */
 body.dark-theme {
   background-color: #121212;
@@ -437,10 +441,10 @@ align-items: center;
 /* CSS */
 .button-85 {
   margin-top: 18px;
-  width: 250px;
+  width: 200px !important;
   padding: 0.6em 2em;
-  border: none;
-  outline: none;
+  /* border: none; */
+  /* outline: none; */
   color: rgb(255, 255, 255);
   background: #111;
   cursor: pointer;
@@ -448,13 +452,16 @@ align-items: center;
   z-index: 0;
   border-radius: 10px;
   user-select: none;
+  text-align: center;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-.button-85 a {
+/* .button-85  {
   text-decoration: none;
   color: white;
-}
+  width: 250px !important;
+  padding: 0.6em 2em !important;
+} */
 
 .button-85:before {
   content: "";
@@ -484,6 +491,7 @@ align-items: center;
   border-radius: 10px;
 
 }
+
 
 @keyframes glowing-button-85 {
   0% {
@@ -865,7 +873,7 @@ center h1 {
 }
 .book p {
   margin: 5px 0;
-  font-size: 10px;
+  /* font-size: 10px; */
 }
 
 .book button {
@@ -897,3 +905,96 @@ center h1 {
   height: 100vh;
   z-index: 55;
 }
+
+
+
+
+/* Style the <details> container */
+.custom-dropdown {
+  font-family: Arial, sans-serif;
+  position: relative;
+  width: 300px; /* Set width for dropdown */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+details{
+  display: inline;
+}
+
+
+
+/* Hide the default marker */
+.custom-details summary::marker {
+  content: ''; /* Remove default triangle */
+}
+
+/* Style the summary */
+.custom-details summary {
+  /* display: inline-flex; */
+  display: inline;
+  align-items: center;
+  justify-content: space-between; /* Align text and icon */
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-details summary:hover {
+  background-color: #eaeaea;
+}
+
+/* css for text overview */
+/* Container styles */
+.text-preview {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 400px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+blockquote{
+  line-height: 30px;
+}
+.readmore{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* Text style */
+.text-preview .text {
+  margin: 0;
+}
+
+/* Hide the full text initially */
+.text-preview .hidden-text {
+  display: none;
+}
+
+/* Show the Read More button */
+.text-preview .read-more {
+  background-color: transparent;
+  color: #007BFF;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Button hover style */
+.text-preview .read-more:hover {
+  text-decoration: none;
+}
+
+
+/* css for text overview */
