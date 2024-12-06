@@ -437,7 +437,9 @@ align-items: center;
 }
 /* ------------------- */
 
-
+ol {
+  line-height: 30px;
+}
 /* CSS */
 .button-85 {
   margin-top: 18px;
