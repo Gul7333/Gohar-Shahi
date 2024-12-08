@@ -4,8 +4,22 @@ const popUpImg = document.querySelector("#popup .popupimg");
 const popImg = document.querySelectorAll(".slideimg");
 const themeToggle = document.getElementById("themeToggle");
 const themeMetaTag = document.querySelector('meta[name="theme-color"]');
-
+const triggerElement = document.getElementById('triggerElement');
+const navbar = document.getElementById('navbar');
 let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
+// navbar offset 
+const triggerPosition = 100
+console.log(triggerPosition,"to offset")
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY ;
+
+  if (scrollPosition >= triggerPosition) {
+    navbar.style.display = 'flex';
+  } else {
+    navbar.style.display = 'none';
+  }
+
+});
 
 // Define light and dark theme colors
 const lightThemeColor = "#ffffff"; // Light theme
@@ -55,20 +69,6 @@ themeToggle.addEventListener("click", () => {
 
 // OpenPopup
 
-function openPopUp(imageSrc) {
-  
-  popUp.style.display = "block";
-  popUpImg.src = imageSrc;
-  body.style.overflow = "hidden";
-  console.log("openPopUp clicked");
-}
-function closePopUp() {
-  popUp.style.display = "none";
-  body.style.overflow = "auto";
-}
-popImg.forEach(function (item) {
-  item.addEventListener("click", () => openPopUp(item.src));
-});
 
 // __________________________________
 // navigation Popup effect

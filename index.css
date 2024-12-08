@@ -87,19 +87,25 @@ h5 {
   border-radius: 4px;
 }
 nav {
-  display: flex;
+  display: none;
+  border: 1px solid #44444475;
   justify-content: space-around;
   position: sticky;
-  top: 0;
+  top: 5px;
   z-index: 16;
-  background: white;
+  
   background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Applies the blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   padding: 8px 0;
   box-sizing: border-box;
-  width: 100%;
+  /* width: 100%; */
+  align-self: center;
   align-items: center;
+  max-width: 900px;
+  border-radius: 15px;
+  margin-inline: 14px;
+
 }
 /* From Uiverse.io by Yaya12085 */ 
 .container {
@@ -271,6 +277,8 @@ background-color: unset;
   }
   nav {
     padding: 1rem 0;
+    margin: auto;
+
   }
   nav .web-title {
     font-size: 2.5rem;

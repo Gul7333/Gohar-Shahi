@@ -1,10 +1,29 @@
 const body = document.querySelector("body");
 const themeToggle = document.getElementById("themeToggle");
-
-
 const themeMetaTag = document.querySelector('meta[name="theme-color"]');
+const triggerElement = document.getElementById('triggerElement');
+const navbar = document.getElementById('navbar');
+
+
+
 
 let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
+
+
+
+// observer.observe(triggerElement)
+const triggerPosition = 100
+console.log(triggerPosition,"to offset")
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY ;
+
+  if (scrollPosition >= triggerPosition) {
+    navbar.style.display = 'flex';
+  } else {
+    navbar.style.display = 'none';
+  }
+
+});
 
 // Define light and dark theme colors
 const lightThemeColor = "#ffffff"; // Light theme
