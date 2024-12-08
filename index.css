@@ -164,7 +164,9 @@ nav {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
+nav a:hover{
+background: #00000067;
+}
 .Logo {
   margin-right: 1rem;
   width: 1.4rem;
