@@ -11,10 +11,14 @@ a {
   color: var(--linkColor);
   text-decoration-line: none;
 }
+
+a:hover{
+  text-decoration-line: underline;
+}
 body {
   margin: 0;
   scroll-behavior: smooth;
-  overflow: scroll;
+  
 min-height: 100vh;
 font-family: Arial, sans-serif;
 
@@ -820,20 +824,8 @@ footer p {
   gap: 3rem;
   /* color: #333; */
 }
-center p {
-  text-align: left;
-  font-size: 0.8em;
-  margin: 10px 30px;
-}
-center h1 {
-  background-image: url('images/books.png');
-  background-size: cover;
-  background-position: center;
-  height: 100px;
-  /* color: #fff; */
-  text-shadow: 2px 2px #333;
-  margin-top: 50px;
-}
+
+
 .book .language {
   position: absolute;
   top: -17px;

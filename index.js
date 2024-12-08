@@ -82,19 +82,6 @@ function navtoggle() {
 }
 // ________________________________
 
-const navItem = navPop.querySelectorAll("li a");
-console.log(navItem.length);
-function addBlue(e) {
-  console.log("started");
-  for (let i = 0; i < navItem.length; i++) {
-    if (navItem[i] === e.target) {
-      navItem[i].classList.add("activeNavItem");
-    } else {
-      navItem[i].classList.remove("activeNavItem");
-    }
-  }
-}
-navPop.addEventListener("click", addBlue);
 
 // slide effect for quotes
 const quote = document.querySelectorAll(".animated-Quote");
