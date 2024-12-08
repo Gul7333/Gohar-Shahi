@@ -9,7 +9,7 @@ let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
 
 // Define light and dark theme colors
 const lightThemeColor = "#ffffff"; // Light theme
-const darkThemeColor = "#333333"; // Dark theme
+const darkThemeColor = "#040d1d"; // Dark theme
 
 const aud = new Audio('./toggle.mp3')
 function toggleTheme() {
@@ -56,6 +56,7 @@ themeToggle.addEventListener("click", () => {
 // OpenPopup
 
 function openPopUp(imageSrc) {
+  
   popUp.style.display = "block";
   popUpImg.src = imageSrc;
   body.style.overflow = "hidden";
@@ -157,7 +158,7 @@ fetch("Profile-photo.json")
 // function for zikre Qalb
 const zikrQalb = document.getElementById("zikrqalb");
 function zikrqalb() {
-  console.log("Click");
+  
   zikrQalb.classList.toggle("active");
 }
 

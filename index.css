@@ -18,11 +18,13 @@ body {
 min-height: 100vh;
 font-family: Arial, sans-serif;
 
+
 }
 /* Light theme */
 body.light-theme {
   background-color: white;
   color: black;
+  
 }
 p{
   line-height: 30px;
@@ -30,11 +32,12 @@ p{
 }
 /* Dark theme */
 body.dark-theme {
-  background-color: #121212;
+  background-color: #040d1d;
   color: white;
   --theme: #fff;
-  --navPopColor: #333;
+  --navPopColor: #040d1d;
   --linkColor: skyblue;
+
 }
 
 /* Toggle button styles */

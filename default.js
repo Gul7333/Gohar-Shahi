@@ -8,7 +8,7 @@ let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
 
 // Define light and dark theme colors
 const lightThemeColor = "#ffffff"; // Light theme
-const darkThemeColor = "#333333"; // Dark theme
+const darkThemeColor = "#040d1d"; // Dark theme
 const aud = new Audio('./toggle.mp3')
 
 function toggleTheme() {
