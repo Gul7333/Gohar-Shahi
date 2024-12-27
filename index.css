@@ -309,6 +309,16 @@ background-color: unset;
 }
 
 /* __________________________________ */
+[data-tooltip]:hover::after {
+  display: block;
+  position: absolute;
+  content: attr(data-tooltip);
+  border: 1px solid black;
+  background: #fff;
+  color: #000;
+  padding: .25em;
+  font-size: small;
+}
 
 /* div which contain profile photo */
 div.photo {
