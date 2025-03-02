@@ -4,7 +4,7 @@
   --theme: #000;
   --navPopColor: #fff;
   --linkColor: rgb(32, 45, 163);
-
+  --nav-link-bg-color:  #07070723;
   
 }
 a {
@@ -41,6 +41,8 @@ body.dark-theme {
   --theme: #fff;
   --navPopColor: #040d1d;
   --linkColor: skyblue;
+  --nav-link-bg-color:  #f7fafa59;
+
 
 }
 
@@ -177,8 +179,14 @@ nav {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+nav a {
+  padding: 10px;
+
+}
 nav a:hover{
-background: #00000067;
+background:var(--nav-link-bg-color);
+transition: padding 0.4;
+border-radius: 12px;
 }
 .Logo {
   margin-right: 1rem;
@@ -391,7 +399,7 @@ div.photo-title {
 
 /* css for profile photo title description */
 .photo-des {
-  margin-top: 10px;
+margin-top: 10px;
 display: flex;
 width: 75%;
 height: 33px;
@@ -902,6 +910,7 @@ footer p {
   border: none;
   font-weight: bold;
   border-radius: 3px;
+  padding: 0.5em;
 }
 
 .book button a {
