@@ -795,9 +795,7 @@ footer .team a {
   margin: 1rem;
 
 }
-.linkprofile {
-  
-}
+
 .linkprofile a {
 
 
@@ -809,6 +807,7 @@ footer .team a {
 
 footer .team-img {
   display: inline-flex;
+  
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;

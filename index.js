@@ -116,7 +116,7 @@ fetch("Profile-photo.json")
     data.forEach((item) => {
       const img = document.createElement("img");
       img.classList.add("animatePhoto");
-      img.src = "images/" + item + ".avif";
+      img.src = "SarkarPicture/" + item + ".avif";
 
       photo.appendChild(img);
     });
