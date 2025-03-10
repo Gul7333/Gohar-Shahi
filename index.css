@@ -861,6 +861,10 @@ footer p {
 }
 .book {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   margin: 0 auto;
   padding: 2rem;
@@ -886,6 +890,7 @@ footer p {
 
   }
 }
+
 .book img {
   width: 100%;
   aspect-ratio: 9/13;
@@ -896,26 +901,32 @@ footer p {
 .book .img {
   width: 200px;
   margin: 0 auto;
+  
+}
+.book h2 {
+  margin-top: 1.5em;
+  margin-bottom: 10px;
 }
 .book p {
-  margin: 5px 0;
+  
+  line-height: 1.3em;
   /* font-size: 10px; */
 }
 
-.book button {
+.book a {
   width: 100%;
   background: #333;
-
+  text-align: center;
   border: none;
   font-weight: bold;
   border-radius: 3px;
-  padding: 0.5em;
+  /* padding: 0.5em; */
 }
 
-.book button a {
+.book  a {
   box-sizing: border-box;
   display: block;
-  padding: 5px 10px;
+  padding: 10px 10px;
   width: 100%;
   text-decoration: none;
   color: #fff;
