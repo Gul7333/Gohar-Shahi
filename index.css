@@ -5,7 +5,7 @@
   --navPopColor: #fff;
   --linkColor: rgb(32, 45, 163);
   --nav-link-bg-color:  #07070723;
-  
+  scroll-behavior: smooth;
 }
 a {
   color: var(--linkColor);
@@ -1034,5 +1034,17 @@ blockquote{
   text-decoration: none;
 }
 
-
+.langs-scroll-to{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.langs-scroll-to a {
+  padding: 8px;
+  background: #ddddddd0;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
 /* css for text overview */

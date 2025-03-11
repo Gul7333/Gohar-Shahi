@@ -18,6 +18,43 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      .Gallery {
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+    .Gallery div {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+      .Gallery a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .Gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .lightbox {
+        position: fixed;
+        inset: 12px;
+
+        z-index: 55;
+        /* object-fit: contain; */
+        display: flex;
+        justify-content: center;
+
+      }
+      .lightbox img {
+        object-fit: contain;
+      }
+    </style>
+    
     <title>His Holiness Gohar Shahi</title>
   </head>
 
@@ -34,7 +71,7 @@
       </div>
 
       <div class="nav-pop">
-        <li><a  href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="Teaching.html">Teaching</a></li>
 
         <li><a href="books.html">Books</a></li>
@@ -42,34 +79,93 @@
 
         <li><a class="visited" href="Organization.html">Organization</a></li>
         <li><a href="More.html">More</a></li>
-     
       </div>
     </nav>
-    <div id="themeToggle" class="toggle-button">
-      🌙
-  </div>
+    <div id="themeToggle" class="toggle-button">🌙</div>
 
-    
+    <main class="Gallery" >
+      <div class="item" >
+        <a href="SarkarPicture/1.avif" download="GoharShahi-img-1">
+          <img src="SarkarPicture/1.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/2.avif" download="GoharShahi-img-2">
+          <img src="SarkarPicture/2.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/3.avif" download="GoharShahi-img-3">
+          <img src="SarkarPicture/3.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/4.avif" download="GoharShahi-img-4">
+          <img src="SarkarPicture/4.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/5.avif" download="GoharShahi-img-5">
+          <img src="SarkarPicture/5.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/6.avif" download="GoharShahi-img-6">
+          <img src="SarkarPicture/6.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/7.avif" download="GoharShahi-img-7">
+          <img src="SarkarPicture/7.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/8.avif" download="GoharShahi-img-8">
+          <img src="SarkarPicture/8.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/9.avif" download="GoharShahi-img-9">
+          <img src="SarkarPicture/9.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/10.avif" download="GoharShahi-img-10">
+          <img src="SarkarPicture/10.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/11.avif" download="GoharShahi-img-11">
+          <img src="SarkarPicture/11.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/12.avif" download="GoharShahi-img-12">
+          <img src="SarkarPicture/12.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/13.avif" download="GoharShahi-img-13">
+          <img src="SarkarPicture/13.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/14.avif" download="GoharShahi-img-14">
+          <img src="SarkarPicture/14.avif" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="SarkarPicture/15.avif" download="GoharShahi-img-15">
+          <img src="SarkarPicture/15.avif" alt="" />
+        </a>
+      </div>
+    </main>
 
+    <!-- html for footer -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- html for footer -->
-
-   <footer class="bottom">
-    <!-- feedback section in footer -->
-    <!-- <div class="feedback">
+    <footer class="bottom">
+      <!-- feedback section in footer -->
+      <!-- <div class="feedback">
     <h2>Github</h2>
     <p>
       Have a suggestion or idea? We'd love to hear it! Your feedback drives
@@ -77,60 +173,88 @@
     </p>
     <a href="https://github.com/Gul7333">Github</a>
   </div> -->
-    <!-- Link section for footer -->
-    <div class="link">
-      <h2>Connect with us on</h2>
-      <a href="https://www.youtube.com/alratv"
-        ><i style="color: red" class="fab fa-youtube"></i
-      ></a>
-      <a href="https://www.facebook.com/alratv?mibextid=9R9pXO"
-        ><i style="color: rgb(12, 101, 202)" class="fab fa-facebook"></i
-      ></a>
+      <!-- Link section for footer -->
+      <div class="link">
+        <h2>Connect with us on</h2>
+        <a href="https://www.youtube.com/alratv"
+          ><i style="color: red" class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.facebook.com/alratv?mibextid=9R9pXO"
+          ><i style="color: rgb(12, 101, 202)" class="fab fa-facebook"></i
+        ></a>
 
-      <a href="https://wa.me/+447472540642"
-        ><i style="color: green" class="fab fa-whatsapp"></i>
-      </a>
-      <a href="https://twitter.com/AlRa_TV"><i style="color: skyblue" class="fab fa-twitter"></i></a>
-    </div>
+        <a href="https://wa.me/+447472540642"
+          ><i style="color: green" class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://twitter.com/AlRa_TV"
+          ><i style="color: skyblue" class="fab fa-twitter"></i
+        ></a>
+      </div>
 
-    <!--  team section in footer -->
-    <h2>Representative</h2>
-    <div class="team">
-      <!--  container for team member -->
-      <div class="team-img">
-        <div class="image-box">
-          <img src="images/img52.avif" alt="Image 1" />
-        </div>
-        <div class="image-title">
-          <a href="https://www.facebook.com/riazul.jannah" >Younus AlGohar <i class="fa-solid fa-link"></i
+      <!--  team section in footer -->
+      <h2>Representative</h2>
+      <div class="team">
+        <!--  container for team member -->
+        <div class="team-img">
+          <div class="image-box">
+            <img src="images/img52.avif" alt="Image 1" />
+          </div>
+          <div class="image-title">
+            <a href="https://www.facebook.com/riazul.jannah"
+              >Younus AlGohar <i class="fa-solid fa-link"></i
             ></a>
+          </div>
         </div>
       </div>
-    </div>
-    <template id="team-member-box">
-      <div class="team-img">
-        <div class="image-box">
-          <img src="images/img3.jpg" alt="Image 1" />
+      <template id="team-member-box">
+        <div class="team-img">
+          <div class="image-box">
+            <img src="images/img3.jpg" alt="Image 1" />
+          </div>
+          <div class="image-title">Younus AlGohar</div>
         </div>
-        <div class="image-title">Younus AlGohar</div>
+      </template>
+      <div class="disclaimer">
+        <strong>Disclaimer</strong>
+        <p>
+          Purpose of this website is to only spread the teaching of His Holiness
+          Gohar Shahi. <br />
+          we don't enforce any religious ideas, instead we want humanity to
+          gather under the one heart , which is the only way to GOD.
+        </p>
       </div>
-    </template>
-    <div class="disclaimer">
-      <strong>Disclaimer</strong>
-      <p>
-        Purpose of this website is to only spread the teaching of His Holiness
-        Gohar Shahi. <br />
-        we don't enforce any religious ideas, instead we want humanity to
-        gather under the one heart , which is the only way to GOD.
-      </p>
+    </footer>
+    <div class="scrolltotop" onclick="scrollToTop()">
+      <svg
+        style="z-index: 77"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 384 512"
+      >
+        <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-370.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"
+        />
+      </svg>
     </div>
-  </footer>
-  <div class="scrolltotop" onclick="scrollToTop()" >
 
-<svg style="z-index: 77;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-370.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/></svg>
-      </div>
+    <div class="lastItem" id="lastitem">Sarkar Riaz Ahmed Gohar Shah©®</div>
+    <script>
+      document.querySelectorAll(".Gallery img").forEach((img) => {
+        img.addEventListener("click", function () {
+          let lightbox = document.createElement("div");
+          lightbox.classList.add("lightbox");
+          document.body.appendChild(lightbox);
 
-  <div class="lastItem" id="lastitem">Sarkar Riaz Ahmed Gohar Shah©®</div>
-<script src="default.js"></script>
+          let imgElement = document.createElement("img");
+          imgElement.src = this.src;
+          lightbox.appendChild(imgElement);
+
+          lightbox.addEventListener("click", function () {
+            lightbox.remove();
+          });
+        });
+      });
+    </script>
+    <script src="default.js"></script>
   </body>
 </html>
