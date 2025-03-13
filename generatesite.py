@@ -15,16 +15,40 @@ def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://exa
     urlset = Element('urlset', xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     today = datetime.date.today().isoformat()
 
+    # Add URL to sitemap                               
+    url_tag = SubElement(urlset, 'url')                
+    loc_tag = SubElement(url_tag, 'loc')               
+    loc_tag.text = base_url + "/"                    
+    lastmod_tag = SubElement(url_tag, 'lastmod')       
+    lastmod_tag.text = today                           
+    changefreq_tag = SubElement(url_tag, 'changefreq') 
+    changefreq_tag.text = 'daily'                      
+    priority_tag = SubElement(url_tag, 'priority')     
+    priority_tag.text = '0.9'                          
+
+
+
+
+
+
+
+
+
+
+
+
     for root, _, files in os.walk(directory):
         if root == ".git":
             return
         for file in files:
             if file.endswith(".html"):
+                if file == "index.html":
+                    continue
                 # Construct the URL
                 relative_path = os.path.relpath(os.path.join(root, file), directory)
                 # calculate the path of file to root directory (directory which is provide in parater e.g "./")
                 url = f"{base_url}/{relative_path.replace(os.sep, '/')}"
-                
+
                 # Add URL to sitemap
                 url_tag = SubElement(urlset, 'url')
                 loc_tag = SubElement(url_tag, 'loc')
