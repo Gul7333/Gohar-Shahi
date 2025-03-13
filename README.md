@@ -13,6 +13,17 @@ This project introduces Riaz Ahmed Gohar Shah as a Final Savior , An Entity who 
 -   Learn Spritualty to reach, recognize GOD, No matter which religon you follow.
 -   The Only way to God is Through Heart.
 
+## Religion Of God (Deen e ILahi- Ishwar Dharama) Book
+  Ultimate GIFT of His Eminence Riaz Gohar Shahi for those who want tl love GOD and are in search of GOd 
+  [Download Here](https://gohar-shahi/books)
+
+
+
+
+### [Watch alra tv Channel](youtube.com/alratv)
+
+
+
 
 
 

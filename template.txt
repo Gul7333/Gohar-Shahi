@@ -41,7 +41,7 @@
         <li><a  href="books.html">Books</a></li>
         <li><a href="Videos.html">Videos</a></li>
 
-        <li><a  href="Organization.html">Organization</a></li>
+        <li><a  href="gallery.html">Gallery</a></li>
         <li><a class="visited" href="More.html">More</a></li>
      
       </div>
