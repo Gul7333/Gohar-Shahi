@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://gohar-shahi.com/sitemap.xml
+Sitemap: https://gohar-shahi.com/feed.xml
