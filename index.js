@@ -6,6 +6,8 @@ const themeToggle = document.getElementById("themeToggle");
 const themeMetaTag = document.querySelector('meta[name="theme-color"]');
 const triggerElement = document.getElementById('triggerElement');
 const navbar = document.getElementById('navbar');
+const topalert = document.getElementById("top-alert")
+
 let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme")) || false;
 // navbar offset 
 const triggerPosition = 100
@@ -15,8 +17,12 @@ window.addEventListener('scroll', () => {
 
   if (scrollPosition >= triggerPosition) {
     navbar.style.display = 'flex';
+    topalert.style.display = "none"
+
   } else {
     navbar.style.display = 'none';
+    topalert.style.display = "flex"
+
   }
 
 });

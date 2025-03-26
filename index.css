@@ -1,4 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam&family=Salsa&display=swap");
+#top-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#top-alert a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  width: 110vw;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 
 :root {
   --theme: #000;
@@ -738,6 +769,7 @@ div.pics {
 .main {
   max-width: 900px;
   margin: 0 auto;
+  padding-top: 1rem;
 }
 /* css for Biography */
 .biography {
