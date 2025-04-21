@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
 // Define light and dark theme colors
 const lightThemeColor = "#ffffff"; // Light theme
 const darkThemeColor = "#040d1d"; // Dark theme
-const aud = new Audio('/toggle.mp3')
+const aud = new Audio('/switch.wav')
 
 function toggleTheme() {
   aud.play()

@@ -976,6 +976,65 @@ footer p {
   z-index: 55;
 }
 
+/* // faqs
+ */
+
+ #faqs {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#faqs h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+#faqs details {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+#faqs summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+#faqs summary::marker {
+  display: none; /* Remove default arrow */
+}
+
+#faqs p {
+  padding: 16px 20px;
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+#faqs a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+#faqs a:hover {
+  text-decoration: underline;
+}
+
 
 
 
