@@ -126,11 +126,12 @@ nav {
   position: sticky;
   top: 5px;
   z-index: 16;
+  padding: 1rem 0;
   
   background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Applies the blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  padding: 8px 0;
+  /* padding: 8px 0; */
   box-sizing: border-box;
   /* width: 100%; */
   align-self: center;
@@ -983,46 +984,46 @@ footer p {
   max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 #faqs h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  /* color: #333; */
 }
 
 #faqs details {
-  background: #fff;
+  /* background: #fff; */
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0;
+  /* border-radius: 8px; */
+  /* padding: 0; */
   margin-bottom: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+  /* overflow: hidden; */
 }
 
 #faqs summary {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  /* color: #333; */
   padding: 16px 20px;
   cursor: pointer;
   list-style: none;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #eee;
+  /* background-color: #f9f9f9; */
+  /* border-bottom: 1px solid #eee; */
 }
 
 #faqs summary::marker {
-  display: none; /* Remove default arrow */
+  display: block; /* Remove default arrow */
 }
 
 #faqs p {
   padding: 16px 20px;
   margin: 0;
   font-size: 1rem;
-  color: #555;
+  /* color: #555; */
   line-height: 1.6;
 }
 
@@ -1049,9 +1050,9 @@ footer p {
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-details{
+/* details{
   display: inline;
-}
+} */
 
 
 
