@@ -1,6 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      .img-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: inline-block;
+      }
+
+      .img-wrapper img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+     
+      .download-icon {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 6px 10px;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 16px;
+        transition: background 0.3s;
+      }
+
+      .download-icon:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      #overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 4px solid white;
+        border-radius: 8px;
+      }
+
+      #overlay:target {
+        display: flex;
+      }
+
+      #overlayClose {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="../index.css" type="text/css" media="all" />
     <link
@@ -29,28 +95,16 @@
       .Gallery div {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      .Gallery a {
+      /* .Gallery a {
         display: block;
         width: 100%;
         height: 100%;
-      }
+      } */
 
       .Gallery img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-      .lightbox {
-        position: fixed;
-        inset: 12px;
-
-        z-index: 55;
-        /* object-fit: contain; */
-        display: flex;
-        justify-content: center;
-      }
-      .lightbox img {
-        object-fit: contain;
       }
     </style>
 
@@ -84,571 +138,1143 @@
 
     <main class="Gallery">
       <div class="item">
-        <a href="../SarkarPicture/1.avif" download="GoharShahi-img-1"
-          ><img src="../SarkarPicture/1.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img
+            src="../SarkarPicture/176.avif"
+            alt=""
+            onclick="openOverlay(this.src)"
+          />
+          <a
+            href="../SarkarPicture/176.avif"
+            download="GoharShahi-img-176"
+            class="download-icon"
+            >⬇</a
+          >
+        </div>
       </div>
+
       <div class="item">
-        <a href="../SarkarPicture/2.avif" download="GoharShahi-img-2"
-          ><img src="../SarkarPicture/2.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/1.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/1.avif" download="GoharShahi-img-1" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/3.avif" download="GoharShahi-img-3"
-          ><img src="../SarkarPicture/3.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/2.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/2.avif" download="GoharShahi-img-2" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/4.avif" download="GoharShahi-img-4"
-          ><img src="../SarkarPicture/4.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/3.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/3.avif" download="GoharShahi-img-3" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/5.avif" download="GoharShahi-img-5"
-          ><img src="../SarkarPicture/5.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/4.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/4.avif" download="GoharShahi-img-4" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/6.avif" download="GoharShahi-img-6"
-          ><img src="../SarkarPicture/6.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/5.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/5.avif" download="GoharShahi-img-5" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/7.avif" download="GoharShahi-img-7"
-          ><img src="../SarkarPicture/7.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/6.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/6.avif" download="GoharShahi-img-6" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/8.avif" download="GoharShahi-img-8"
-          ><img src="../SarkarPicture/8.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/7.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/7.avif" download="GoharShahi-img-7" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/9.avif" download="GoharShahi-img-9"
-          ><img src="../SarkarPicture/9.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/8.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/8.avif" download="GoharShahi-img-8" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/10.avif" download="GoharShahi-img-10"
-          ><img src="../SarkarPicture/10.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/9.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/9.avif" download="GoharShahi-img-9" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/11.avif" download="GoharShahi-img-11"
-          ><img src="../SarkarPicture/11.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/10.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/10.avif" download="GoharShahi-img-10" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/12.avif" download="GoharShahi-img-12"
-          ><img src="../SarkarPicture/12.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/11.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/11.avif" download="GoharShahi-img-11" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/13.avif" download="GoharShahi-img-13"
-          ><img src="../SarkarPicture/13.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/12.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/12.avif" download="GoharShahi-img-12" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/14.avif" download="GoharShahi-img-14"
-          ><img src="../SarkarPicture/14.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/13.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/13.avif" download="GoharShahi-img-13" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/15.avif" download="GoharShahi-img-15"
-          ><img src="../SarkarPicture/15.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/14.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/14.avif" download="GoharShahi-img-14" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/16.avif" download="GoharShahi-img-16"
-          ><img src="../SarkarPicture/16.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/15.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/15.avif" download="GoharShahi-img-15" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/17.avif" download="GoharShahi-img-17"
-          ><img src="../SarkarPicture/17.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/16.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/16.avif" download="GoharShahi-img-16" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/18.avif" download="GoharShahi-img-18"
-          ><img src="../SarkarPicture/18.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/17.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/17.avif" download="GoharShahi-img-17" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/19.avif" download="GoharShahi-img-19"
-          ><img src="../SarkarPicture/19.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/18.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/18.avif" download="GoharShahi-img-18" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/20.avif" download="GoharShahi-img-20"
-          ><img src="../SarkarPicture/20.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/19.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/19.avif" download="GoharShahi-img-19" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/21.avif" download="GoharShahi-img-21"
-          ><img src="../SarkarPicture/21.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/20.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/20.avif" download="GoharShahi-img-20" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/22.avif" download="GoharShahi-img-22"
-          ><img src="../SarkarPicture/22.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/21.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/21.avif" download="GoharShahi-img-21" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/23.avif" download="GoharShahi-img-23"
-          ><img src="../SarkarPicture/23.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/22.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/22.avif" download="GoharShahi-img-22" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/24.avif" download="GoharShahi-img-24"
-          ><img src="../SarkarPicture/24.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/23.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/23.avif" download="GoharShahi-img-23" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/25.avif" download="GoharShahi-img-25"
-          ><img src="../SarkarPicture/25.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/24.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/24.avif" download="GoharShahi-img-24" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/26.avif" download="GoharShahi-img-26"
-          ><img src="../SarkarPicture/26.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/25.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/25.avif" download="GoharShahi-img-25" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/27.avif" download="GoharShahi-img-27"
-          ><img src="../SarkarPicture/27.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/26.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/26.avif" download="GoharShahi-img-26" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/28.avif" download="GoharShahi-img-28"
-          ><img src="../SarkarPicture/28.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/27.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/27.avif" download="GoharShahi-img-27" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/29.avif" download="GoharShahi-img-29"
-          ><img src="../SarkarPicture/29.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/28.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/28.avif" download="GoharShahi-img-28" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/30.avif" download="GoharShahi-img-30"
-          ><img src="../SarkarPicture/30.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/29.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/29.avif" download="GoharShahi-img-29" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/31.avif" download="GoharShahi-img-31"
-          ><img src="../SarkarPicture/31.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/30.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/30.avif" download="GoharShahi-img-30" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/32.avif" download="GoharShahi-img-32"
-          ><img src="../SarkarPicture/32.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/31.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/31.avif" download="GoharShahi-img-31" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/33.avif" download="GoharShahi-img-33"
-          ><img src="../SarkarPicture/33.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/32.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/32.avif" download="GoharShahi-img-32" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/34.avif" download="GoharShahi-img-34"
-          ><img src="../SarkarPicture/34.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/33.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/33.avif" download="GoharShahi-img-33" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/35.avif" download="GoharShahi-img-35"
-          ><img src="../SarkarPicture/35.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/34.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/34.avif" download="GoharShahi-img-34" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/36.avif" download="GoharShahi-img-36"
-          ><img src="../SarkarPicture/36.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/35.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/35.avif" download="GoharShahi-img-35" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/37.avif" download="GoharShahi-img-37"
-          ><img src="../SarkarPicture/37.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/36.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/36.avif" download="GoharShahi-img-36" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/38.avif" download="GoharShahi-img-38"
-          ><img src="../SarkarPicture/38.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/37.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/37.avif" download="GoharShahi-img-37" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/39.avif" download="GoharShahi-img-39"
-          ><img src="../SarkarPicture/39.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/38.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/38.avif" download="GoharShahi-img-38" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/40.avif" download="GoharShahi-img-40"
-          ><img src="../SarkarPicture/40.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/39.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/39.avif" download="GoharShahi-img-39" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/41.avif" download="GoharShahi-img-41"
-          ><img src="../SarkarPicture/41.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/40.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/40.avif" download="GoharShahi-img-40" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/42.avif" download="GoharShahi-img-42"
-          ><img src="../SarkarPicture/42.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/41.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/41.avif" download="GoharShahi-img-41" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/43.avif" download="GoharShahi-img-43"
-          ><img src="../SarkarPicture/43.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/42.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/42.avif" download="GoharShahi-img-42" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/44.avif" download="GoharShahi-img-44"
-          ><img src="../SarkarPicture/44.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/43.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/43.avif" download="GoharShahi-img-43" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/45.avif" download="GoharShahi-img-45"
-          ><img src="../SarkarPicture/45.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/44.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/44.avif" download="GoharShahi-img-44" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/46.avif" download="GoharShahi-img-46"
-          ><img src="../SarkarPicture/46.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/45.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/45.avif" download="GoharShahi-img-45" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/47.avif" download="GoharShahi-img-47"
-          ><img src="../SarkarPicture/47.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/46.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/46.avif" download="GoharShahi-img-46" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/48.avif" download="GoharShahi-img-48"
-          ><img src="../SarkarPicture/48.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/47.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/47.avif" download="GoharShahi-img-47" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/49.avif" download="GoharShahi-img-49"
-          ><img src="../SarkarPicture/49.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/48.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/48.avif" download="GoharShahi-img-48" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/50.avif" download="GoharShahi-img-50"
-          ><img src="../SarkarPicture/50.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/49.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/49.avif" download="GoharShahi-img-49" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/51.avif" download="GoharShahi-img-51"
-          ><img src="../SarkarPicture/51.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/50.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/50.avif" download="GoharShahi-img-50" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/52.avif" download="GoharShahi-img-52"
-          ><img src="../SarkarPicture/52.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/51.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/51.avif" download="GoharShahi-img-51" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/53.avif" download="GoharShahi-img-53"
-          ><img src="../SarkarPicture/53.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/52.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/52.avif" download="GoharShahi-img-52" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/54.avif" download="GoharShahi-img-54"
-          ><img src="../SarkarPicture/54.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/53.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/53.avif" download="GoharShahi-img-53" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/55.avif" download="GoharShahi-img-55"
-          ><img src="../SarkarPicture/55.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/54.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/54.avif" download="GoharShahi-img-54" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/56.avif" download="GoharShahi-img-56"
-          ><img src="../SarkarPicture/56.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/55.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/55.avif" download="GoharShahi-img-55" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/57.avif" download="GoharShahi-img-57"
-          ><img src="../SarkarPicture/57.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/56.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/56.avif" download="GoharShahi-img-56" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/58.avif" download="GoharShahi-img-58"
-          ><img src="../SarkarPicture/58.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/57.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/57.avif" download="GoharShahi-img-57" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/59.avif" download="GoharShahi-img-59"
-          ><img src="../SarkarPicture/59.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/58.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/58.avif" download="GoharShahi-img-58" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/60.avif" download="GoharShahi-img-60"
-          ><img src="../SarkarPicture/60.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/59.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/59.avif" download="GoharShahi-img-59" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/61.avif" download="GoharShahi-img-61"
-          ><img src="../SarkarPicture/61.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/60.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/60.avif" download="GoharShahi-img-60" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/62.avif" download="GoharShahi-img-62"
-          ><img src="../SarkarPicture/62.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/61.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/61.avif" download="GoharShahi-img-61" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/63.avif" download="GoharShahi-img-63"
-          ><img src="../SarkarPicture/63.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/62.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/62.avif" download="GoharShahi-img-62" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/64.avif" download="GoharShahi-img-64"
-          ><img src="../SarkarPicture/64.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/63.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/63.avif" download="GoharShahi-img-63" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/65.avif" download="GoharShahi-img-65"
-          ><img src="../SarkarPicture/65.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/64.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/64.avif" download="GoharShahi-img-64" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/66.avif" download="GoharShahi-img-66"
-          ><img src="../SarkarPicture/66.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/65.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/65.avif" download="GoharShahi-img-65" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/67.avif" download="GoharShahi-img-67"
-          ><img src="../SarkarPicture/67.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/66.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/66.avif" download="GoharShahi-img-66" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/68.avif" download="GoharShahi-img-68"
-          ><img src="../SarkarPicture/68.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/67.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/67.avif" download="GoharShahi-img-67" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/69.avif" download="GoharShahi-img-69"
-          ><img src="../SarkarPicture/69.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/68.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/68.avif" download="GoharShahi-img-68" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/70.avif" download="GoharShahi-img-70"
-          ><img src="../SarkarPicture/70.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/69.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/69.avif" download="GoharShahi-img-69" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/71.avif" download="GoharShahi-img-71"
-          ><img src="../SarkarPicture/71.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/70.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/70.avif" download="GoharShahi-img-70" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/72.avif" download="GoharShahi-img-72"
-          ><img src="../SarkarPicture/72.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/71.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/71.avif" download="GoharShahi-img-71" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/73.avif" download="GoharShahi-img-73"
-          ><img src="../SarkarPicture/73.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/72.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/72.avif" download="GoharShahi-img-72" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/74.avif" download="GoharShahi-img-74"
-          ><img src="../SarkarPicture/74.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/73.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/73.avif" download="GoharShahi-img-73" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/75.avif" download="GoharShahi-img-75"
-          ><img src="../SarkarPicture/75.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/74.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/74.avif" download="GoharShahi-img-74" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/76.avif" download="GoharShahi-img-76"
-          ><img src="../SarkarPicture/76.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/75.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/75.avif" download="GoharShahi-img-75" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/77.avif" download="GoharShahi-img-77"
-          ><img src="../SarkarPicture/77.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/76.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/76.avif" download="GoharShahi-img-76" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/78.avif" download="GoharShahi-img-78"
-          ><img src="../SarkarPicture/78.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/77.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/77.avif" download="GoharShahi-img-77" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/79.avif" download="GoharShahi-img-79"
-          ><img src="../SarkarPicture/79.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/78.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/78.avif" download="GoharShahi-img-78" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/80.avif" download="GoharShahi-img-80"
-          ><img src="../SarkarPicture/80.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/79.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/79.avif" download="GoharShahi-img-79" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/81.avif" download="GoharShahi-img-81"
-          ><img src="../SarkarPicture/81.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/80.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/80.avif" download="GoharShahi-img-80" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/82.avif" download="GoharShahi-img-82"
-          ><img src="../SarkarPicture/82.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/81.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/81.avif" download="GoharShahi-img-81" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/83.avif" download="GoharShahi-img-83"
-          ><img src="../SarkarPicture/83.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/82.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/82.avif" download="GoharShahi-img-82" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/84.avif" download="GoharShahi-img-84"
-          ><img src="../SarkarPicture/84.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/83.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/83.avif" download="GoharShahi-img-83" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/85.avif" download="GoharShahi-img-85"
-          ><img src="../SarkarPicture/85.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/84.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/84.avif" download="GoharShahi-img-84" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/86.avif" download="GoharShahi-img-86"
-          ><img src="../SarkarPicture/86.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/85.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/85.avif" download="GoharShahi-img-85" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/87.avif" download="GoharShahi-img-87"
-          ><img src="../SarkarPicture/87.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/86.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/86.avif" download="GoharShahi-img-86" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/88.avif" download="GoharShahi-img-88"
-          ><img src="../SarkarPicture/88.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/87.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/87.avif" download="GoharShahi-img-87" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/89.avif" download="GoharShahi-img-89"
-          ><img src="../SarkarPicture/89.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/88.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/88.avif" download="GoharShahi-img-88" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/90.avif" download="GoharShahi-img-90"
-          ><img src="../SarkarPicture/90.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/89.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/89.avif" download="GoharShahi-img-89" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/91.avif" download="GoharShahi-img-91"
-          ><img src="../SarkarPicture/91.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/90.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/90.avif" download="GoharShahi-img-90" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/92.avif" download="GoharShahi-img-92"
-          ><img src="../SarkarPicture/92.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/91.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/91.avif" download="GoharShahi-img-91" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/93.avif" download="GoharShahi-img-93"
-          ><img src="../SarkarPicture/93.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/92.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/92.avif" download="GoharShahi-img-92" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/94.avif" download="GoharShahi-img-94"
-          ><img src="../SarkarPicture/94.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/93.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/93.avif" download="GoharShahi-img-93" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/95.avif" download="GoharShahi-img-95"
-          ><img src="../SarkarPicture/95.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/94.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/94.avif" download="GoharShahi-img-94" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/96.avif" download="GoharShahi-img-96"
-          ><img src="../SarkarPicture/96.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/95.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/95.avif" download="GoharShahi-img-95" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/97.avif" download="GoharShahi-img-97"
-          ><img src="../SarkarPicture/97.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/96.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/96.avif" download="GoharShahi-img-96" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/98.avif" download="GoharShahi-img-98"
-          ><img src="../SarkarPicture/98.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/97.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/97.avif" download="GoharShahi-img-97" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/99.avif" download="GoharShahi-img-99"
-          ><img src="../SarkarPicture/99.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/98.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/98.avif" download="GoharShahi-img-98" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/100.avif" download="GoharShahi-img-100"
-          ><img src="../SarkarPicture/100.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/99.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/99.avif" download="GoharShahi-img-99" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/101.avif" download="GoharShahi-img-101"
-          ><img src="../SarkarPicture/101.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/100.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/100.avif" download="GoharShahi-img-100" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/102.avif" download="GoharShahi-img-102"
-          ><img src="../SarkarPicture/102.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/101.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/101.avif" download="GoharShahi-img-101" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/103.avif" download="GoharShahi-img-103"
-          ><img src="../SarkarPicture/103.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/102.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/102.avif" download="GoharShahi-img-102" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/104.avif" download="GoharShahi-img-104"
-          ><img src="../SarkarPicture/104.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/103.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/103.avif" download="GoharShahi-img-103" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/105.avif" download="GoharShahi-img-105"
-          ><img src="../SarkarPicture/105.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/104.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/104.avif" download="GoharShahi-img-104" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/106.avif" download="GoharShahi-img-106"
-          ><img src="../SarkarPicture/106.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/105.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/105.avif" download="GoharShahi-img-105" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/107.avif" download="GoharShahi-img-107"
-          ><img src="../SarkarPicture/107.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/106.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/106.avif" download="GoharShahi-img-106" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/108.avif" download="GoharShahi-img-108"
-          ><img src="../SarkarPicture/108.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/107.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/107.avif" download="GoharShahi-img-107" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/109.avif" download="GoharShahi-img-109"
-          ><img src="../SarkarPicture/109.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/108.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/108.avif" download="GoharShahi-img-108" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/110.avif" download="GoharShahi-img-110"
-          ><img src="../SarkarPicture/110.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/109.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/109.avif" download="GoharShahi-img-109" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/111.avif" download="GoharShahi-img-111"
-          ><img src="../SarkarPicture/111.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/110.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/110.avif" download="GoharShahi-img-110" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/112.avif" download="GoharShahi-img-112"
-          ><img src="../SarkarPicture/112.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/111.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/111.avif" download="GoharShahi-img-111" class="download-icon">⬇</a>
+        </div>
       </div>
       <div class="item">
-        <a href="../SarkarPicture/113.avif" download="GoharShahi-img-113"
-          ><img src="../SarkarPicture/113.avif" alt=""
-        /></a>
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/112.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/112.avif" download="GoharShahi-img-112" class="download-icon">⬇</a>
+        </div>
       </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/113.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/113.avif" download="GoharShahi-img-113" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/114.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/114.avif" download="GoharShahi-img-114" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/115.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/115.avif" download="GoharShahi-img-115" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/116.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/116.avif" download="GoharShahi-img-116" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/117.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/117.avif" download="GoharShahi-img-117" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/118.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/118.avif" download="GoharShahi-img-118" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/119.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/119.avif" download="GoharShahi-img-119" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/120.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/120.avif" download="GoharShahi-img-120" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/121.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/121.avif" download="GoharShahi-img-121" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/122.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/122.avif" download="GoharShahi-img-122" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/123.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/123.avif" download="GoharShahi-img-123" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/124.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/124.avif" download="GoharShahi-img-124" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/125.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/125.avif" download="GoharShahi-img-125" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/126.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/126.avif" download="GoharShahi-img-126" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/127.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/127.avif" download="GoharShahi-img-127" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/128.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/128.avif" download="GoharShahi-img-128" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/129.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/129.avif" download="GoharShahi-img-129" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/130.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/130.avif" download="GoharShahi-img-130" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/131.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/131.avif" download="GoharShahi-img-131" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/132.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/132.avif" download="GoharShahi-img-132" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/133.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/133.avif" download="GoharShahi-img-133" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/134.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/134.avif" download="GoharShahi-img-134" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/135.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/135.avif" download="GoharShahi-img-135" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/136.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/136.avif" download="GoharShahi-img-136" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/137.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/137.avif" download="GoharShahi-img-137" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/138.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/138.avif" download="GoharShahi-img-138" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/139.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/139.avif" download="GoharShahi-img-139" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/140.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/140.avif" download="GoharShahi-img-140" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/141.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/141.avif" download="GoharShahi-img-141" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/142.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/142.avif" download="GoharShahi-img-142" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/143.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/143.avif" download="GoharShahi-img-143" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/144.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/144.avif" download="GoharShahi-img-144" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/145.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/145.avif" download="GoharShahi-img-145" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/146.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/146.avif" download="GoharShahi-img-146" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/147.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/147.avif" download="GoharShahi-img-147" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/148.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/148.avif" download="GoharShahi-img-148" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/149.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/149.avif" download="GoharShahi-img-149" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/150.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/150.avif" download="GoharShahi-img-150" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/151.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/151.avif" download="GoharShahi-img-151" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/152.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/152.avif" download="GoharShahi-img-152" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/153.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/153.avif" download="GoharShahi-img-153" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/154.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/154.avif" download="GoharShahi-img-154" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/155.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/155.avif" download="GoharShahi-img-155" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/156.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/156.avif" download="GoharShahi-img-156" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/157.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/157.avif" download="GoharShahi-img-157" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/158.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/158.avif" download="GoharShahi-img-158" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/159.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/159.avif" download="GoharShahi-img-159" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/160.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/160.avif" download="GoharShahi-img-160" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/161.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/161.avif" download="GoharShahi-img-161" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/162.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/162.avif" download="GoharShahi-img-162" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/163.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/163.avif" download="GoharShahi-img-163" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/164.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/164.avif" download="GoharShahi-img-164" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/165.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/165.avif" download="GoharShahi-img-165" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/166.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/166.avif" download="GoharShahi-img-166" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/167.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/167.avif" download="GoharShahi-img-167" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/168.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/168.avif" download="GoharShahi-img-168" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/169.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/169.avif" download="GoharShahi-img-169" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/170.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/170.avif" download="GoharShahi-img-170" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/171.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/171.avif" download="GoharShahi-img-171" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/172.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/172.avif" download="GoharShahi-img-172" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/173.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/173.avif" download="GoharShahi-img-173" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/174.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/174.avif" download="GoharShahi-img-174" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/175.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/175.avif" download="GoharShahi-img-175" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/176.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/176.avif" download="GoharShahi-img-176" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/177.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/177.avif" download="GoharShahi-img-177" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/178.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/178.avif" download="GoharShahi-img-178" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/179.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/179.avif" download="GoharShahi-img-179" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/180.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/180.avif" download="GoharShahi-img-180" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/181.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/181.avif" download="GoharShahi-img-181" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/182.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/182.avif" download="GoharShahi-img-182" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/183.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/183.avif" download="GoharShahi-img-183" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/184.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/184.avif" download="GoharShahi-img-184" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/185.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/185.avif" download="GoharShahi-img-185" class="download-icon">⬇</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../SarkarPicture/186.avif" alt="" onclick="openOverlay(this.src)" />
+          <a href="../SarkarPicture/186.avif" download="GoharShahi-img-186" class="download-icon">⬇</a>
+        </div>
+      </div>
+      
     </main>
+    <div id="overlay" onclick="closeOverlay()">
+      <span id="overlayClose">&times;</span>
+      <img id="overlayImg" src="" alt="Full Image" />
+    </div>
 
     <!-- html for footer -->
 
@@ -727,9 +1353,10 @@
     </div>
 
     <div class="lastItem" id="lastitem">Sarkar Riaz Ahmed Gohar Shah©®</div>
-    <span id="top-alert" >
-      
-      <a href="http://goharshahi.com">This is unofficial website ~ Gohar Shahi's official Website is goharshahi.com   <i class="fa-solid fa-link"></i>
+    <span id="top-alert">
+      <a href="http://goharshahi.com"
+        >This is unofficial website ~ Gohar Shahi's official Website is
+        goharshahi.com <i class="fa-solid fa-link"></i>
       </a>
     </span>
     <!-- <script>
@@ -750,5 +1377,24 @@
       });
     </script> -->
     <script src="../default.js"></script>
+    <script>
+      function openOverlay(src) {
+        const overlay = document.getElementById("overlay");
+        const overlayImg = document.getElementById("overlayImg");
+        overlayImg.src = src;
+        overlay.style.display = "flex";
+      }
+
+      function closeOverlay() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // Optional: close on Esc
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeOverlay();
+        }
+      });
+    </script>
   </body>
 </html>
