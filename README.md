@@ -17,7 +17,8 @@ This project introduces Riaz Ahmed Gohar Shah as a Final Savior , An Entity who 
   Ultimate GIFT of His Eminence Riaz Gohar Shahi for those who want tl love GOD and are in search of GOd 
   [Download Here](https://gohar-shahi/books)
 
-
+## Checkout Gohar Shahi App
+  [Gohar Shahi App Link](goharshahi.apk.com)
 
 
 ### [Watch alra tv Channel](youtube.com/alratv)

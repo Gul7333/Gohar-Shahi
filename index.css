@@ -1140,3 +1140,36 @@ blockquote{
   color: black;
 }
 /* css for text overview */
+
+
+
+
+
+
+
+
+.whatsapp-float {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 9999;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
