@@ -56,7 +56,7 @@ def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://exa
                 lastmod_tag = SubElement(url_tag, 'lastmod')
                 lastmod_tag.text = today
                 changefreq_tag = SubElement(url_tag, 'changefreq')
-                changefreq_tag.text = 'daily'
+                changefreq_tag.text = 'weekly'
                 priority_tag = SubElement(url_tag, 'priority')
                 priority_tag.text = '0.8'
             if file.endswith(".pdf"):
