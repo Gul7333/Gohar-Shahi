@@ -1142,7 +1142,13 @@ blockquote{
 /* css for text overview */
 
 
-
+.quote {
+  font-style: italic;
+  background: #f4f4f4;
+  padding: 10px;
+  border-left: 4px solid #ccc;
+  margin: 15px 0;
+}
 
 
 
