@@ -6,7 +6,6 @@ from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
 def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://example.com"):
     """
     Generates a sitemap.xml file for all .html files in the given directory.
-
     :param directory: Directory to scan for .html files
     :param output_file: Name of the output sitemap file
     :param base_url: Base URL for the site
@@ -15,21 +14,16 @@ def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://exa
     urlset = Element('urlset', xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     today = datetime.date.today().isoformat()
 
-    # Add URL to sitemap                               
-    url_tag = SubElement(urlset, 'url')                
-    loc_tag = SubElement(url_tag, 'loc')               
+    # Add URL to sitemap             
+    url_tag = SubElement(urlset, 'url')               
+    loc_tag = SubElement(url_tag, 'loc')     
     loc_tag.text = base_url + "/"                    
-    lastmod_tag = SubElement(url_tag, 'lastmod')       
+    lastmod_tag = SubElement(url_tag, 'lastmod')
     lastmod_tag.text = today                           
     changefreq_tag = SubElement(url_tag, 'changefreq') 
     changefreq_tag.text = 'daily'                      
     priority_tag = SubElement(url_tag, 'priority')     
-    priority_tag.text = '0.9'                          
-
-
-
-
-
+    priority_tag.text = '0.9'
 
 
 
@@ -52,7 +46,7 @@ def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://exa
                 # Add URL to sitemap
                 url_tag = SubElement(urlset, 'url')
                 loc_tag = SubElement(url_tag, 'loc')
-                loc_tag.text = url
+                loc_tag.text = url.removesuffix(".html")
                 lastmod_tag = SubElement(url_tag, 'lastmod')
                 lastmod_tag.text = today
                 changefreq_tag = SubElement(url_tag, 'changefreq')
@@ -76,8 +70,6 @@ def generate_sitemap(directory, output_file="sitemap.xml", base_url="https://exa
                 changefreq_tag.text = 'daily'                     
                 priority_tag = SubElement(url_tag, 'priority')    
                 priority_tag.text = '0.7'                         
-
-
 
 
 
